@@ -1,0 +1,15 @@
+// 弹框可能超出就引入这
+
+.dialog-body-auto-height{
+  height: 600px
+}
+@media screen and (min-width:1367px) and (max-width:1600px){
+  .dialog-body-auto-height{
+    height: 500px
+  }
+}
+@media screen and (min-width:960px) and (max-width:1366px){
+  .dialog-body-auto-height{
+    height: 400px
+  }
+}

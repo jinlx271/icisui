@@ -1,0 +1,195 @@
+/* eslint-disable */
+/* body {
+    font-size: 12px;
+  } */
+  /* 表格斜线 */
+  span[data-wn-type='start'], span[data-wn-type='end']{
+    color:#2d5afa;
+  }
+  span[data-wn-type='label']{
+    text-decoration: underline; 
+    color:#2d5afa;
+  }
+  div[data-mce-cellslash-parent]{
+    background-image:url(./line.svg) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */           
+  }
+  div[data-mce-cellslash="1"]{
+    display:none !important;
+  }
+  td.slash, td.double-slash {
+    position: relative;
+    -webkit-print-color-adjust: exact !important;
+  }
+  td.slash:before,td.double-slash:before, td.double-slash:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: var(--mce-border-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  td.slash.diagonal-slash::before {
+    clip-path: polygon(calc(100% - 1px) 0%, 100% 0%, 1px 100%, 0% 100%);
+  }
+  td.slash.reverse-diagonal-slash::before {
+    clip-path: polygon(0% 0%, 1px 0%, 100% 100%, calc(100% - 1px) 100%);
+  }
+  td.slash.single-slash::before {
+    clip-path: polygon(calc(190% + 2px) 0%, 190% 0%, 0% calc(68% - 1px), 0% 68%);
+  }
+  td.slash.reverse-single-slash::before {
+    clip-path: polygon(-90% 0%, calc(-90% + 2px) 0%, 190% 100%, calc(190% - 2px) 100%);
+  }
+  td.double-slash.slash-top-left::before {
+    clip-path: polygon(-2px 0%, 0px 0%, 100% 50%, calc(100% - 2px) 50%);
+  }
+  td.double-slash.slash-top-left::after{
+    clip-path: polygon(-1px 0%, 0px 0%, 100% 200%, calc(100% - 1px) 200%);
+  }
+  td.double-slash.slash-top-right::before {
+    clip-path: polygon(calc(100% - 0px) 1px, 100% 0%, 0px calc(50% - 1px), 0% 50%);
+  }
+  td.double-slash.slash-top-right::after{
+    clip-path: polygon(calc(100% + 1px) 0%, 100% 0%, 0px 200%, 0% calc(200% + 2px));
+  }
+  td.double-slash.slash-bottom-left::before {
+    clip-path: polygon(50% 0%, calc(50% + 1px) 0%, 100% 100%, calc(100% - 1px) 100%);
+  }
+  td.double-slash.slash-bottom-left::after{
+    clip-path: polygon(-100% 0%, calc(-100% + 2px) 0%, 100% 100%, calc(100% - 2px) 100%);
+  }
+  td.double-slash.slash-bottom-right::before {
+    clip-path: polygon(50% 0%, calc(50% + 1px) 0%, 1px 100%, 0% 100%);
+  }
+  td.double-slash.slash-bottom-right::after{
+    clip-path: polygon(200% 0%, calc(200% + 2px) 0%, 2px 100%, 0% 100%);
+  }
+  td.double-slash.slash-specail::before{
+    clip-path: polygon(50% 0%, calc(50% + 1px) 0%, 1px 100%, 0% 100%);
+  }
+  td.double-slash.slash-specail::after{
+    clip-path: polygon(calc(100% + 1px) 0%, 100% 0%, 0px 200%, 0% calc(200% + 2px));
+  }
+  .tinymceEdit{
+    font-size:12px;
+  }
+  /* 护理文书页面中img为空时不显示 */
+  .tinymceEdit img[src='']{ 
+    opacity: 0 !important;
+  }
+  #tinymce table{
+    table-layout:fixed;
+    font-size:12px;
+    border-color:grey;
+    --mce-border-color: grey;
+  }
+  #tinymce table td{
+    overflow:hidden !important;  /* 表格组件设计界面表格内容 需要隐藏  */ 
+    white-space:nowrap; /* 表格不自动换行 */
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  .breakLine{
+    word-break: break-all;
+  }
+  .inLine{
+    white-space:nowrap;
+  }
+  #editor table td{
+    overflow:hidden !important;  /* 模板设计界面表格内容 需要隐藏  */ 
+    word-break:unset !important;
+  }
+  .tinymceEdit table {
+    
+    border-collapse: collapse;
+    width:100%;
+    table-layout:fixed;
+    margin:0;
+    padding:0;
+    border-color:grey;
+    --mce-border-color: grey;
+  }
+  
+  .tinymceEdit table td{
+    font-family: SimSun;
+    border-collapse: collapse;
+    width:100%;
+    table-layout:fixed;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  .tinymceEdit b, .tinymceEdit strong {
+      font-weight: bolder !important;
+      font-family: auto !important;
+  }
+  .tinymceEdit p,.mce-content-body p {
+    margin:0px !important;
+    padding:0px !important;
+    line-height: 1;
+  }
+  .tinymceEdit span, .mce-content-body span{
+    margin:0px !important;
+    padding:0px !important;
+  }
+  /* td文本中自动换行按照width显示 */
+  .tinymceEdit table th,
+  .tinymceEdit table td ,
+  .mce-content-body table th,
+  .mce-content-body table th{
+    /* word-break: break-word;
+    table-layout: fixed; */
+    /* overflow:hidden; */
+    white-space:nowrap;
+    word-break:unset;
+    margin:0;
+    padding:0;
+  }
+  figure {
+    display: table;
+    margin: 1rem auto;
+  }
+  figure figcaption {
+    color: #999;
+    display: block;
+    margin-top: 0.25rem;
+    text-align: center;
+  }
+  hr {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+  }
+  code {
+    background-color: #e8e8e8;
+    border-radius: 3px;
+  }
+  .mce-content-body:not([dir=rtl]) blockquote {
+    border-left: 2px solid #ccc;
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+  }
+  .mce-content-body[dir=rtl] blockquote {
+    border-right: 2px solid #ccc;
+    margin-right: 1.5rem;
+    padding-right: 1rem;
+  }
+  #tinymce .mce-item-td { border: 1px dashed #bbb; }
+  .tinymceEdit .mce-item-td {
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+  }
+
+
+

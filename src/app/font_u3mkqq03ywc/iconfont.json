@@ -1,0 +1,79 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "47627",
+      "name": "圆",
+      "font_class": "yuan",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "1380266",
+      "name": "叉",
+      "font_class": "close-btn",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "1722927",
+      "name": "箭头",
+      "font_class": "jiantou-copy",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "2068474",
+      "name": "箭头",
+      "font_class": "arrow-o-b-copy-copy",
+      "unicode": "e6d2",
+      "unicode_decimal": 59090
+    },
+    {
+      "icon_id": "4323779",
+      "name": "同心圆",
+      "font_class": "yuanxingweixuanzhong",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    },
+    {
+      "icon_id": "7023219",
+      "name": "圆",
+      "font_class": "yuan1",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    },
+    {
+      "icon_id": "7494859",
+      "name": "三角形 ",
+      "font_class": "sanjiaoxing",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "10310333",
+      "name": "星",
+      "font_class": "xing",
+      "unicode": "e90a",
+      "unicode_decimal": 59658
+    },
+    {
+      "icon_id": "13216137",
+      "name": "三角形",
+      "font_class": "sanjiaoxing1",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "13962588",
+      "name": "井号",
+      "font_class": "jinghao",
+      "unicode": "e6e3",
+      "unicode_decimal": 59107
+    }
+  ]
+}

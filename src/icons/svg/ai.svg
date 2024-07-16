@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="143px" height="32px" viewBox="0 0 143 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>copilot按钮-默认</title>
+    <defs>
+        <linearGradient x1="47.9462549%" y1="35.2971305%" x2="47.9462549%" y2="113.210178%" id="linearGradient-1">
+            <stop stop-color="#2D5AFA" offset="0%"></stop>
+            <stop stop-color="#75A8F9" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="143" height="32" rx="16"></rect>
+        <filter x="-1.7%" y="-7.8%" width="103.5%" height="115.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="2.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="4.42157415e-13%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#DFFAFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="按钮入口样例1" transform="translate(-1733.000000, -178.000000)">
+            <g id="编组" transform="translate(1733.000000, 178.000000)">
+                <g id="椭圆形">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <g id="蒙版">
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+                    </g>
+                </g>
+                <text id="WiNEX-Copilot" font-family="PingFangSC-Semibold, PingFang SC" font-size="14" font-weight="500" line-spacing="20" fill="#FFFFFF">
+                    <tspan x="36" y="21">WiNEX Copilot</tspan>
+                </text>
+                <g transform="translate(4.000000, 4.000000)" id="copilot">
+                    <rect id="矩形" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                    <path d="M13.0676905,20.9952425 C8.10783741,20.9952425 4.07144646,16.9608547 4.07144646,12.0010016 C4.07144646,7.04114849 8.10783741,3.00475753 13.0676905,3.00475753 C16.2226859,3.00475753 19.1393039,4.67339955 20.7578666,7.33160838 L18.2138386,9.87363325 C16.5792505,8.23303564 16.4891078,8.15491194 16.4530507,8.1228612 C15.5155663,7.30356398 14.3136633,6.85285035 13.0676905,6.85285035 C10.2291962,6.85285035 7.91953927,9.1625073 7.91953927,12.0010016 C7.91953927,14.8394959 10.2291962,17.1491528 13.0676905,17.1491528 C14.3176696,17.1491528 15.523579,16.6944329 16.4510475,15.8811451 C16.4971204,15.8410817 16.58526,15.7649612 18.2138386,14.1283699 L20.7558635,16.6703948 L22.8812286,14.5450296 L20.3351974,12.0010016 L22.8451715,9.49102746 L20.7298222,7.37567816 L22.9333111,5.17018613 C20.7158,1.97713046 17.0319673,0 13.0676905,0 C6.45121442,0 1.06668892,5.3845255 1.06668892,12.0010016 C1.06668892,18.6174777 6.45121442,24 13.0676905,24 C17.0279609,24 20.7077873,22.0288791 22.9252984,18.8418329 L20.7578666,16.672398 C19.1393039,19.3286036 16.2226859,20.9952425 13.0676905,20.9952425 L13.0676905,20.9952425 Z M14.4819297,13.6115516 C14.4819297,13.6115516 14.4819297,13.6115516 14.4819297,13.6135548 C14.4799266,13.6135548 14.4779234,13.615558 14.4759202,13.6175611 C14.473917,13.6175611 14.4719139,13.6215675 14.4699107,13.6235707 C14.0812954,13.9601035 13.5845088,14.1443953 13.0696937,14.1443953 C11.8878224,14.1443953 10.9263,13.1828729 10.9263,12.0010016 C10.9263,10.8191303 11.8878224,9.85760788 13.0696937,9.85760788 C13.7187213,9.85760788 14.1794508,10.1300392 14.4639012,10.3744262 C14.6101327,10.5146482 15.3452967,11.247809 16.0944829,12.0010016 C15.3673316,12.7321593 14.6542025,13.4432852 14.4839329,13.6115516 L14.4819297,13.6115516 Z M18.2118354,14.1083382 L16.1044988,12.0010016 L18.2118354,9.8916618 L20.319172,12.0010016 L18.2118354,14.1083382 Z" id="形状" fill="url(#linearGradient-5)" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

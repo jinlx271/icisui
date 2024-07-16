@@ -1,0 +1,16 @@
+{
+  "id": "3504012",
+  "name": "jiangli",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5385748",
+      "name": "奖励",
+      "font_class": "jiangli",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    }
+  ]
+}

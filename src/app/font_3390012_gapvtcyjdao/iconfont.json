@@ -1,0 +1,65 @@
+{
+  "id": "3390012",
+  "name": "YYYY",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1352632",
+      "name": "笔记_notes23",
+      "font_class": "biji_notes",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "5112847",
+      "name": "笔记-线性icon",
+      "font_class": "ziyuan",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "8423779",
+      "name": "打针注射",
+      "font_class": "huaban",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "29622826",
+      "name": "圆形-01",
+      "font_class": "yuanxing-01",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "29594412",
+      "name": "caret-down",
+      "font_class": "caret-down",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "29594609",
+      "name": "arrow",
+      "font_class": "arrow",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "29595104",
+      "name": "circleyjx",
+      "font_class": "circleyjx",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "29595156",
+      "name": "circleyjx",
+      "font_class": "circleyjx1",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    }
+  ]
+}

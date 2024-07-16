@@ -1,0 +1,189 @@
+//to reset element-ui default css
+body{
+  --el-form-item-width:190px;
+}
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  width: 720px;
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+  .el-dialog__body {
+    // max-height: calc(100vh - 160px);
+    // overflow-y: auto;
+    padding: 0px 20px;
+  }
+  .el-dialog__header {
+    padding: 12px 20px 12px 20px;
+    border-bottom: 1px solid #DFE7F5;
+    margin-bottom: 17px;
+  }
+  .el-dialog__title {
+    color: #000622;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  .el-dialog__footer{
+    border-top: 1px solid #DFE7F5;
+    padding: 16px;
+  }
+  .el-dialog__headerbtn {
+    top: 15px;
+    .el-dialog__close {
+      font-size: 20px;
+      color: #8599C0;
+    }
+  }
+}
+
+//element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+/* table style reset */
+.el-table {
+  .el-table__header {
+    th {
+      // background-color: $table-header-color;
+      // color: rgba(0, 0, 0, 0.85);
+      font-weight: bold;
+    }
+  }
+  tbody>tr>td>.cell,tbody>tr>th>.cell,thead>tr>th>.cell {
+      padding-left: 2px;
+      padding-right: 2px;
+  }
+  // th.is-leaf,
+  // td {
+  //   border-color: 1px solid $table-border-color;
+  // }
+}
+.el-table--group::after {
+  display: none;
+  content: "";
+  position: absolute;
+  background-color: #ebeef5;
+  z-index: 1;
+}
+// .el-table--group,
+// .el-table--border {
+//   border-color: $table-border-color;
+// }
+// .el-table--border th,
+// .el-table--border td {
+//   border-color: $table-border-color;
+// }
+// .el-table__empty-block {
+//   border-bottom: 1px solid $table-border-color;
+//   border-right: 1px solid $table-border-color;
+//   border-left: 1px solid $table-border-color;
+// }
+
+/****2020-06-02  wxj注释  由于影响到表格鼠标移入样式****/ 
+.el-table__body {
+  tr {
+    &.hover-row {
+      & > td,
+      &.current-row > td,
+      &.el-table__row--striped > td,
+      &.el-table__row--striped.current-row > td {
+        background-color: #eef4ff !important;
+      }
+    }
+  }
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.el-form-item {
+  margin-bottom: 16px;
+}
+
+.el-button + .el-button {
+  margin-left: 4px;
+}
+.el-input__inner {
+  padding: 0px 8px;
+}
+.el-textarea__inner {
+  padding: 5px 8px;
+}
+.el-select__input {
+  margin-left: 8px;
+}
+
+.el-tag--mini {
+  padding: 0 2px;
+  height: 18px;
+  line-height: 18px;
+}
+// 修改多选 选中item文字颜色
+.el-select__tags{
+  .el-tag.el-tag--info{
+    color:#000622
+  }
+}
+// .el-tooltip__popper{
+//   max-width: 300px;
+//   &.is-light{
+//     border:1px solid rgb(115,215, 255) !important;
+//     background: rgb(225, 248, 255) !important;
+//   }
+// }
+.table-form-item.is-error{
+  .el-input__inner{
+    border: 1px solid $red;
+  }
+}
+// 表单样式
+.wn-form {
+  .wn-form-inline {
+    display: flex;
+    justify-content: space-between;
+  }
+  .el-form-item__label {
+    font-size: 14px;
+    text-align: right;
+  }
+  
+  .el-date-editor.el-input, .el-date-editor.el-input__inner, .el-input {
+    width: var(--el-form-item-width) 
+  }
+  .coverinput .el-input {
+    width: 100%
+  }
+  .el-form-item--small.el-form-item {
+    margin-bottom: 16px;
+  }
+}
+.el-checkbox__label, .el-form-item__label, .el-radio__label {
+  color: #666666;
+}
+.el-table .el-table__row.disabled .cell {
+  color: #999;
+}

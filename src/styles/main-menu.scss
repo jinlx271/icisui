@@ -1,0 +1,146 @@
+.main-menu{
+  border:none!important;
+  .el-menu-item{
+    width: 100%;
+    min-height: 74px;
+    padding: 12px 0 0 !important;
+    margin: 12px 0;
+    line-height:1;
+    text-align: center;
+    font-size: 13px;
+    i{
+      width: 28px;
+      height: 28px;
+      margin: 0 auto 8px;
+      display: block;
+
+      background:url('~@/assets/img/menu/main.png?v=0729')  no-repeat;
+      background-size: 396px 90px;
+
+      &.home{
+        background-position:0 0;
+      }
+      &.arrange{
+        background-position:-168px 0;
+      }
+      &.count{
+        background-position:-196px 0;
+      }
+      &.history{
+        background-position:-224px 0;
+      }
+      &.quality{
+        background-position:-112px 0;
+      }
+      &.drug{
+        background-position: -189px -60px;
+      }
+      &.fee{
+        background-position:-249px -60px;
+      }
+      &.feeInfo{
+        background-position:-309px -60px;
+      }
+      &.execute{
+        background-position:-63px -60px;
+      }
+      &.create{
+        background-position:-1px -61px;
+      }
+      &.org{ // 组织管理
+        background-position:-116px -30px;
+      }
+      &.dictor{ // 数据字典
+        background-position:-232px -30px;
+      }
+      &.document{ // 文书管理
+        background-position:-290px -30px;
+      }
+      &.param{ // 医院参数
+        background-position:0px -30px;
+      }
+      &.device{ // 设备管理
+        background-position:-174px -30px;
+      }
+      &.rule{ // 用户权限
+        background-position:-58px -30px;
+      }
+      &.monitor{ // 术中监控
+        background-position: -280px 0;
+      }
+    }
+    span{
+      color: #4C5064;
+    }
+  }
+  a.router-link-active,
+  a:hover{
+    i{
+      &.home{
+        background-position:-56px 0;
+      }
+      &.arrange{
+        background-position:-140px 0;
+      }
+      &.count{
+        background-position:-252px 0;
+      }
+      &.history{
+        background-position:-28px 0;
+      }
+      &.quality{
+        background-position:-84px 0;
+      }
+      &.drug{
+        background-position: -219px -60px;
+      }
+      &.fee{
+        background-position:-279px -60px;
+      }
+      &.feeInfo{
+        background-position:-339px -60px;
+      }
+      &.execute{
+        background-position:-94px -60px;
+      }
+      &.create{
+        background-position:-32px -61px;
+      }
+      &.org{
+        background-position:-145px -30px;
+      }
+      &.dictor{
+        background-position:-261px -30px;
+      }
+      &.document{
+        background-position:-319px -30px;
+      }
+      &.param{
+        background-position:-29px -30px;
+      }
+      &.device{
+        background-position:-203px -30px;
+      }
+      &.rule{
+        background-position:-87px -30px;
+      }
+      &.monitor{ // 术中监控
+        background-position: -309px 0;
+      }
+    }
+    span{
+      color:var(--maincolor);
+    }
+  }
+  a:hover li{
+    background:none!important;
+  }
+  a li{
+    border-left: 3px solid #fff;
+  }
+  a.router-link-active li{
+    border-left:3px solid var(--maincolor);
+    background:#ECF3FF!important;
+
+  }
+}

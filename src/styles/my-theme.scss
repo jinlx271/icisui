@@ -1,0 +1,62 @@
+
+// /* 改变主题色变量 */
+// $--color-primary: #0f49ed;
+// $--color-success: #07bfa7;
+// $--color-text-primary: #000;
+// $--color-text-regular: #000622;
+// $--color-text-secondary: #303133;
+// $--border-color-base: #C0C4CC;
+// $--border-color-light: #DCDFE6;
+// $--border-color-lighter: #E4E7ED;
+// $--border-color-extra-light: #EBEEF5;
+
+
+// $--tag-success-color: #00C682;
+// $--tag-warning-color:#FF8A00;
+// $--tag-primary-color: var(--maincolor);
+// $--tag-danger-color: #FF4545;
+
+// $--table-header-background-color: #eef2fd;
+// $--table-header-font-color:rgba(0, 0, 0, 0.85);
+// // $--table-border-color:#DCDFE6; // 默认是border-color-lighter的颜色，可在这指定
+
+// /* 改变 icon 字体路径变量，必需 */
+// $--font-path: '~element-ui/lib/theme-chalk/fonts';
+// @import "~element-ui/packages/theme-chalk/src/index";
+// $--background-color: #E3E9F3;
+// $--header-bgcolor: #0055C3;
+// $--color-icon: #666; 
+// $--color-border: #979797;  
+// $--color-line: #E9E9E9; 
+// $--color--alert: #f56c6c; 
+ 
+  /* 改变主题色变量 */
+  // $--color-primary: #0f49ed;
+  $--color-success: #07bfa7;
+  $--color-text-primary: #000;
+  $--color-text-regular: #000622;
+  $--color-text-secondary: #303133;
+  $--border-color-base: #C0C4CC;
+  $--border-color-light: #DCDFE6;
+  $--border-color-lighter: #E4E7ED;
+  $--border-color-extra-light: #EBEEF5;
+
+
+  $--tag-success-color: #00C682;
+  $--tag-warning-color:#FF8A00;
+  $--tag-primary-color: #0f49ed;
+  $--tag-danger-color: #FF4545;
+
+  $--table-header-background-color: #eef2fd;
+  $--table-header-font-color:rgba(0, 0, 0, 0.85);
+  // $--table-border-color:#DCDFE6; // 默认是border-color-lighter的颜色，可在这指定
+
+  /* 改变 icon 字体路径变量，必需 */
+  $--font-path: '~element-ui/lib/theme-chalk/fonts';
+  @import "~element-ui/packages/theme-chalk/src/index";
+  $--background-color: #E3E9F3;
+  $--header-bgcolor: #13892f;
+  $--color-icon: #666; 
+  $--color-border: #979797;  
+  $--color-line: #E9E9E9; 
+  $--color--alert: #f56c6c; 

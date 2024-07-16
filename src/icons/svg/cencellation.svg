@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="控件" transform="translate(0 4)">
+    <g id="导航栏" transform="translate(-1871 -13)">
+      <g id="分组-7">
+        <g id="icon_注销" transform="translate(1871 9)">
+          <rect id="矩形" width="24" height="24" opacity="0"/>
+          <path id="路径_2" data-name="路径 2" d="M11.5,12a.56.56,0,0,1-.51-.6V1.6a.516.516,0,1,1,1.02,0v9.8a.56.56,0,0,1-.51.6Zm0,0,4.49-9.014a.619.619,0,0,0-.55.963h0a8.4,8.4,0,1,1-8.01.07h0c.31-.931-.48-.964-.53-.965a9.494,9.494,0,1,0,9.09-.067h0Z" transform="translate(0.494 1)" fill-rule="evenodd" fill="currentColor" opacity="0.7"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

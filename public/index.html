@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="expires" content="Wed, 01 Jan 2020 00:00:00 GMT">
+  <meta http-equiv="expires" content="0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' localhost:9589 'unsafe-inline' 'unsafe-eval' blob: data:;script-src 'unsafe-eval'; object-src 'none';"> -->
+   <!-- <meta http-equiv="Content-Security-Policy" content=" object-src 'none'" /> -->
+
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="stylesheet" href="<%= BASE_URL %>static/tinymce/css/common.css">
+  <!-- <%= htmlWebpackPlugin.options.versionMessage%> -->
+</head>
+<script type="text/javascript" src="/static/multibrowser.js"></script>
+<body >
+  <script type="text/javascript" src="/globalConfig.js?randomId=<%=Math.random()%>"></script>
+  <!-- <script>
+    document.write('<script  src="/globalConfig.js?t=' + new Date().getTime() + '"><\/script>')
+
+  </script> -->
+  <div id="app"></div>
+</body>
+<script>
+  const title = globalConfig.title
+  document.title = title
+  const isAndroid = navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1
+  var userAgent = navigator.userAgent // 取得浏览器的userAgent字符串
+  if (userAgent.indexOf('Chrome') === -1) {
+    document.getElementsByTagName('body')[0].innerHTML =
+      '<a href="./static/file/ChromeStandaloneSetup64.exe" ' +
+      'style="line-height: 100px; display: block;text-align: center;' +
+      'font-weight: 600;color: #F56C6C;font-size: 20px;' +
+      'text-decoration: underline;" >' +
+      '本软件只支持谷歌浏览器打开，点击下载谷歌浏览器</a>'
+  }
+
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+[
+  {
+    "value": "patientBaseInfo",
+    "label": "患者基本信息",
+    "children": [
+      {
+        "label": "诊断信息",
+        "value": "diagName"
+      },
+      {
+        "label": "住院号",
+        "value": "mrn"
+      },
+      {
+        "label": "科室",
+        "value": "deptName"
+      },
+      {
+        "label": "入区时间",
+        "value": "icuAreaTime"
+      },
+      {
+        "label": "入院时间",
+        "value": "inpatientDate"
+      },
+      {
+        "label": "床号",
+        "value": "bedNo"
+      },
+      {
+        "label": "床号",
+        "value": "bedId"
+      },
+      {
+        "label": "患者姓名",
+        "value": "patientName"
+      },
+      {
+        "label": "性别",
+        "value": "sex"
+      }
+    ]
+  },
+  {
+    "value": "catheterInfo",
+    "label": "导管信息",
+    "children": []
+  }
+]

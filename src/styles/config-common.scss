@@ -1,0 +1,168 @@
+// 让label不自动换行
+.my_white-space_nowrap{
+  white-space: nowrap;
+}
+// 统一搜索栏输入框样式问题
+::v-deep .el-header {
+  height: 32px !important;
+  margin-bottom:10px ;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &.heightAuto {
+    height: auto !important;
+    margin-bottom: 0;
+    .el-form-item--small,
+    .el-form-iteme {
+      margin-bottom: 10px;
+    }
+  }
+  .el-form-item--small,
+  .el-form-iteme {
+    margin-bottom: 0;
+  }
+  .el-input{
+    max-width: 200px;
+  }
+  //搜索栏的输入框
+  .el-input > .el-input__inner {
+    border: none;
+    background: #f3f5f9;
+    border-radius: 2px;
+  }
+  // .el-select > .el-input > .el-input__inner {
+  //   // width: vw(160);
+  //   // min-width: 140px;
+  // }
+  .iconBlue {
+    display: inline-block;
+    width: 3px;
+    height: 16px;
+    background: var(--maincolor);
+  }
+  div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  span {
+    flex: 1;
+    margin-left: 8px;
+    font-size: 16px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #000000;
+    line-height: 22px;
+  }
+  
+  .el-checkbox{
+    margin-top: 0px;
+    &__input{
+      margin-left: 0px;
+    }
+    &__label{
+      margin-left: 0px;
+      font-size: 14px;
+    }
+  }
+  .el-button {
+    width: 90px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    span {
+      margin: 0;
+      font-size: 12px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
+}
+//弹出框统一样式
+::v-deep .el-dialog {
+  &__header {
+    border-bottom: 1px solid #dfe7f5;
+  }
+  &__body {
+    padding: 18px 20px;
+    margin: 0 auto;
+    height:100%;
+    
+    .el-date-editor {
+      width: 100%;
+    }
+
+    .el-input__prefix {
+      right: 0;
+      left: inherit;
+    }
+    .el-input__inner {
+      padding-left: 10px;
+      border: none;
+      background: #f3f5f9;
+      border-radius: 2px;
+    }
+    .el-input__inner {
+      padding-left: 10px;
+    }
+    .el-input > .el-input__inner {
+      border: none;
+      background: #f3f5f9;
+      border-radius: 2px;
+    }
+    .el-table {
+      .el-input > .el-input__inner {
+        border:1px solid  #C0C4CC;
+        background: #fff;
+        border-radius: 2px;
+      }
+    }
+  }
+  &__footer {
+    border-top: 1px solid #dfe7f5;
+    text-align: right;
+    padding:10px 18px;
+    display: flex;
+    justify-content: flex-end;
+    .el-button {
+      width: 90px;
+    }
+  }
+}
+::v-deep .el-main {
+  padding: 0px;
+  .el-input > .el-input__inner {
+    width: 100%;
+  }
+  .el-select > .el-input > .el-input__inner {
+    width: 100%;
+  }
+}
+::v-deep .el-footer {
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+::v-deep .el-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+//更改功能模块表头样式
+.el-table ::v-deep.disabledSelection .cell .el-checkbox__inner {
+  display: none !important;
+}
+.el-table ::v-deep.disabledSelection .cell::before {
+  content: '是否启用';
+  text-align: center;
+  line-height: 37px;
+}
+

@@ -1,0 +1,693 @@
+.front_body {
+  background-image: url("./front_body.png");
+  background-size: 419px 768px;
+  height: 768px;
+  width: 419px;
+
+  .front_cheek_right {
+    width: 15px;
+    height: 69px;
+    top: 17px;
+    left: 162px;
+  }
+
+  .front_forehead_center {
+    width: 51px;
+    height: 31px;
+    top: 5px;
+    left: 185px;
+  }
+
+  .front_cheek_left {
+    width: 15px;
+    height: 69px;
+    top: 17px;
+    left: 242px;
+  }
+
+  .front_eye_right {
+    width: 25px;
+    height: 16px;
+    top: 45px;
+    left: 179px;
+  }
+
+  .front_nose_center {
+    width: 24px;
+    height: 33px;
+    top: 47px;
+    left: 197px;
+  }
+
+  .front_eye_left {
+    width: 25px;
+    height: 16px;
+    top: 45px;
+    left: 214px;
+  }
+
+  .front_mouth_center {
+    width: 34px;
+    height: 18px;
+    top: 82px;
+    left: 192px;
+  }
+
+  .front_neck_right {
+    width: 21px;
+    height: 35px;
+    top: 108px;
+    left: 175px;
+  }
+
+  .front_neck_center {
+    width: 25px;
+    height: 35px;
+    top: 115px;
+    left: 197px;
+  }
+
+  .front_neck_left {
+    width: 21px;
+    height: 35px;
+    top: 108px;
+    left: 223px;
+  }
+
+  .front_arm_right {
+    width: 105px;
+    height: 55px;
+    top: 127px;
+    left: 100px;
+  }
+
+  .front_arm_left {
+    width: 105px;
+    height: 55px;
+    top: 127px;
+    left: 213px;
+  }
+
+  .front_chest_right {
+    width: 71px;
+    height: 93px;
+    top: 164px;
+    left: 135px;
+  }
+
+  .front_chest_left {
+    width: 71px;
+    height: 93px;
+    top: 164px;
+    left: 212px;
+  }
+
+  .front_biceps_right {
+    width: 53px;
+    height: 69px;
+    top: 182px;
+    left: 85px;
+  }
+
+  .front_elbow_right {
+    width: 45px;
+    height: 36px;
+    top: 244px;
+    left: 74px;
+  }
+
+  .front_underarm_right {
+    width: 56px;
+    height: 79px;
+    top: 273px;
+    left: 52px;
+  }
+
+  .front_wrist_right {
+    width: 37px;
+    height: 31px;
+    top: 347px;
+    left: 38px;
+  }
+
+  .front_opisthenar_right {
+    width: 41px;
+    height: 41px;
+    top: 373px;
+    left: 22px;
+    z-index: 1;
+  }
+
+  .front_finger_right {
+    width: 55px;
+    height: 69px;
+    top: 381px;
+    left: 2px;
+  }
+
+  .front_waist_right {
+    width: 52px;
+    height: 31px;
+    top: 258px;
+    left: 142px;
+  }
+
+  .front_belly_right {
+    width: 53px;
+    height: 37px;
+    top: 291px;
+    left: 138px;
+  }
+
+  .front_abdomen_right {
+    width: 48px;
+    height: 34px;
+    top: 326px;
+    left: 136px;
+  }
+
+  .front_hip_right {
+    width: 31px;
+    height: 61px;
+    top: 357px;
+    left: 129px;
+  }
+
+  .front_prostate_right {
+    width: 41px;
+    height: 64px;
+    top: 363px;
+    left: 153px;
+  }
+
+  .front_waist_center {
+    width: 17px;
+    height: 48px;
+    top: 244px;
+    left: 201px;
+  }
+
+  .front_belly_center {
+    width: 40px;
+    height: 34px;
+    top: 297px;
+    left: 190px;
+  }
+
+  .front_abdomen_center {
+    width: 43px;
+    height: 47px;
+    top: 331px;
+    left: 188px;
+  }
+
+  .front_prostate_center {
+    width: 39px;
+    height: 50px;
+    top: 381px;
+    left: 189px;
+  }
+
+  .front_waist_left {
+    width: 52px;
+    height: 31px;
+    top: 258px;
+    left: 225px;
+  }
+
+  .front_belly_left {
+    width: 53px;
+    height: 37px;
+    top: 291px;
+    left: 226px;
+  }
+
+  .front_abdomen_left {
+    width: 48px;
+    height: 34px;
+    top: 326px;
+    left: 235px;
+  }
+
+  .front_hip_left {
+    width: 29px;
+    height: 61px;
+    top: 359px;
+    left: 261px;
+  }
+
+  .front_prostate_left {
+    width: 41px;
+    height: 64px;
+    top: 363px;
+    left: 223px;
+  }
+
+  // 上臂
+  .front_biceps_left {
+    width: 53px;
+    height: 69px;
+    top: 182px;
+    left: 281px;
+  }
+
+  //手肘
+  .front_elbow_left {
+    width: 45px;
+    height: 36px;
+    top: 244px;
+    left: 299px;
+  }
+
+  //小臂
+  .front_underarm_left {
+    width: 56px;
+    height: 79px;
+    top: 273px;
+    left: 311px;
+  }
+
+  //手腕
+  .front_wrist_left {
+    width: 37px;
+    height: 31px;
+    top: 347px;
+    left: 344px;
+  }
+
+  //手背
+  .front_opisthenar_left {
+    width: 41px;
+    height: 41px;
+    top: 373px;
+    left: 356px;
+    z-index: 1;
+  }
+
+  //手指
+  .front_finger_left {
+    width: 55px;
+    height: 69px;
+    top: 381px;
+    left: 361px;
+  }
+
+  .front_thigh_right {
+    width: 73px;
+    height: 85px;
+    top: 425px;
+    left: 129px;
+  }
+
+  .front_knee_right {
+    width: 56px;
+    height: 65px;
+    top: 515px;
+    left: 139px;
+  }
+
+  .front_leg_right {
+    width: 51px;
+    height: 85px;
+    top: 583px;
+    left: 136px;
+  }
+
+  .front_ankle_right {
+    width: 33px;
+    height: 38px;
+    top: 672px;
+    left: 146px;
+  }
+
+  .front_foot_right {
+    width: 59px;
+    height: 53px;
+    top: 715px;
+    left: 121px;
+  }
+
+  .front_thigh_left {
+    width: 73px;
+    height: 85px;
+    top: 425px;
+    left: 216px;
+  }
+
+  .front_knee_left {
+    width: 56px;
+    height: 65px;
+    top: 515px;
+    left: 223px;
+  }
+
+  .front_leg_left {
+    width: 51px;
+    height: 85px;
+    top: 583px;
+    left: 233px;
+  }
+
+  .front_ankle_left {
+    width: 33px;
+    height: 38px;
+    top: 672px;
+    left: 239px;
+  }
+
+  .front_foot_left {
+    width: 59px;
+    height: 53px;
+    top: 715px;
+    left: 239px;
+  }
+}
+.back_body {
+  background-image: url("./back_body.png");
+  background-size: 415px 756px;
+  height: 756px;
+  width: 415px;
+
+  //头部左侧 brain
+  .back_brain_left {
+    width: 17px;
+    height: 70px;
+    top: 18px;
+    left: 161px;
+  }
+
+  //颈部左侧 neck
+  .back_neck_left {
+    width: 16px;
+    height: 39px;
+    top: 83px;
+    left: 180px;
+  }
+
+  //左肩 arm
+  .back_arm_left {
+    width: 104px;
+    height: 57px;
+    top: 122px;
+    left: 99px;
+  }
+
+  //左上臂 biceps
+  .back_biceps_left {
+    width: 54px;
+    height: 68px;
+    top: 179px;
+    left: 84px;
+  }
+
+  //左胳膊肘 elbow
+  .back_aelbow_left {
+    width: 50px;
+    height: 45px;
+    top: 239px;
+    left: 70px;
+  }
+
+  //左小臂 underarm
+  .back_underarm_left {
+    width: 57px;
+    height: 76px;
+    top: 275px;
+    left: 48px;
+  }
+
+  //左手腕 wrist
+  .back_wrist_left {
+    width: 39px;
+    height: 35px;
+    top: 343px;
+    left: 35px;
+  }
+
+  //左手背 opisthenar
+  .back_opisthenar_left {
+    width: 41px;
+    height: 40px;
+    top: 373px;
+    left: 19px;
+    z-index: 1;
+  }
+
+  //左手指 finger
+  .back_finger_left {
+    width: 51px;
+    height: 66px;
+    top: 382px;
+    left: 3px;
+  }
+
+  //左后背 rearSide
+  .back_rearSide_left {
+    width: 59px;
+    height: 109px;
+    top: 151px;
+    left: 139px;
+  }
+
+  //左腰上 waistTop
+  .back_waistTop_left {
+    width: 58px;
+    height: 30px;
+    top: 254px;
+    left: 138px;
+  }
+
+  //左腰 waist
+  .back_waist_left {
+    width: 67px;
+    height: 29px;
+    top: 286px;
+    left: 138px;
+  }
+
+  //左臀 buttocks
+  .back_buttocks_left {
+    width: 77px;
+    height: 110px;
+    top: 321px;
+    left: 128px;
+  }
+
+  //左大腿 thigh
+  .back_thigh_left {
+    width: 73px;
+    height: 88px;
+    top: 430px;
+    left: 130px;
+  }
+
+  //左膝盖 knee
+  .back_knee_left {
+    width: 58px;
+    height: 60px;
+    top: 523px;
+    left: 136px;
+  }
+
+  //左小腿 leg
+  .back_leg_left {
+    width: 53px;
+    height: 83px;
+    top: 586px;
+    left: 132px;
+  }
+
+  //左脚踝 ankle
+  .back_ankle_left {
+    width: 33px;
+    height: 40px;
+    top: 673px;
+    left: 144px;
+  }
+
+  //左脚 foot
+  .back_foot_left {
+    width: 55px;
+    height: 39px;
+    top: 716px;
+    left: 123px;
+  }
+
+  //后脑 afterbrain
+  .back_afterbrain_center {
+    width: 51px;
+    height: 42px;
+    top: 6px;
+    left: 183px;
+  }
+
+  //颈椎 cervical
+  .back_cervical_center {
+    width: 21px;
+    height: 42px;
+    top: 83px;
+    left: 197px;
+  }
+
+  //腰椎 lumbar
+  .back_lumbar_center {
+    width: 12px;
+    height: 141px;
+    top: 144px;
+    left: 201px;
+  }
+
+  //肛门 anus
+  .back_anus_center {
+    width: 31px;
+    height: 44px;
+    top: 361px;
+    left: 192px;
+    z-index: 1;
+  }
+
+  //头部右侧 brain
+  .back_brain_right {
+    width: 17px;
+    height: 70px;
+    top: 18px;
+    right: 160px;
+  }
+
+  //颈部右侧 neck
+  .back_neck_right {
+    width: 16px;
+    height: 39px;
+    top: 83px;
+    right: 180px;
+  }
+
+  //右肩 arm
+  .back_arm_right {
+    width: 104px;
+    height: 57px;
+    top: 122px;
+    right: 99px;
+  }
+
+  //右上臂 biceps
+  .back_biceps_right {
+    width: 54px;
+    height: 68px;
+    top: 179px;
+    right: 84px;
+  }
+
+  //右胳膊肘 elbow
+  .back_aelbow_right {
+    width: 50px;
+    height: 45px;
+    top: 239px;
+    right: 70px;
+  }
+
+  //右小臂 underarm
+  .back_underarm_right {
+    width: 57px;
+    height: 76px;
+    top: 275px;
+    right: 49px;
+  }
+
+  //右手腕 wrist
+  .back_wrist_right {
+    width: 39px;
+    height: 35px;
+    top: 343px;
+    right: 35px;
+  }
+
+  //右手背 opisthenar
+  .back_opisthenar_right {
+    width: 41px;
+    height: 40px;
+    top: 373px;
+    right: 20px;
+    z-index: 1;
+  }
+
+  //右手指 finger
+  .back_finger_right {
+    width: 51px;
+    height: 66px;
+    top: 382px;
+    right: 5px;
+  }
+
+  //右后背 rearSide
+  .back_rearSide_right {
+    width: 59px;
+    height: 109px;
+    top: 151px;
+    right: 139px;
+  }
+
+  //右腰上 waistTop
+  .back_waistTop_right {
+    width: 58px;
+    height: 30px;
+    top: 254px;
+    right: 139px;
+  }
+
+  //右腰 waist
+  .back_waist_right {
+    width: 67px;
+    height: 29px;
+    top: 286px;
+    right: 137px;
+  }
+
+  //右臀 buttocks
+  .back_buttocks_right {
+    width: 77px;
+    height: 110px;
+    top: 321px;
+    right: 127px;
+  }
+
+  //右大腿 thigh
+  .back_thigh_right {
+    width: 73px;
+    height: 88px;
+    top: 430px;
+    right: 130px;
+  }
+
+  //右膝盖 knee
+  .back_knee_right {
+    width: 58px;
+    height: 60px;
+    top: 523px;
+    right: 136px;
+  }
+
+  //右小腿 leg
+  .back_leg_right {
+    width: 53px;
+    height: 83px;
+    top: 586px;
+    right: 132px;
+  }
+
+  //右脚踝 ankle
+  .back_ankle_right {
+    width: 33px;
+    height: 40px;
+    top: 673px;
+    right: 144px;
+  }
+
+  //右脚 foot
+  .back_foot_right {
+    width: 55px;
+    height: 39px;
+    top: 716px;
+    right: 123px;
+  }
+}

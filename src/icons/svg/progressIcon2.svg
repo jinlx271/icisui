@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20">
+	<title>输血</title>
+	<defs>
+		<image  width="12" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAQCAMAAAAVv241AAAAAXNSR0IB2cksfwAAAJZQTFRFAAAAzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzEVFzEVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUVFzUREzUVFzUVFzUVFzUVFPGnQgwAAADJ0Uk5TABcLISIkTiUMD6yNjo+kkK8QI5p8SEZbxf/5p/TrX/WVqajatpa3GLRlbe2zADZaeTNz1ah9AAAAfElEQVR4nGNgAAFGRgYIYGJmYWVjY2dn52Bg4OTi5uHl4+Pn5xcQZBASBsqKiAAJYSEIR1QUxhETBwMxMEdCEgSkpJE4MtxIHFk5JI68ArIeRUxlSsoqqqpqykpAjrqGpqaWtraWpqaOOoOunr6+voEBkDDUhbhcXR1MAQCoAg8gtg4z+AAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="4" y="2"/>
+</svg>

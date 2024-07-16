@@ -1,0 +1,107 @@
+@import "./my-theme.scss";
+@import "./mixin.scss";
+@import "./variables.scss";
+@import "./custom-scrollbar.scss";
+@import "./resource.scss";
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100vh;
+  margin:0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Microsoft YaHei, PingFang SC,
+    Hiragino Sans GB, Arial, sans-serif;
+  color: #000622;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+.van-nav-bar__left,
+.van-nav-bar__text,
+.van-nav-bar .van-icon {
+  font-size: rem(14);
+  font-weight: 600;
+  color: var(--maincolor) !important;
+}
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+.r_c_center {
+  justify-content: center;
+  align-items: center;
+}
+div:focus {
+  outline: none;
+}
+#app {
+  height: 100%;
+  overflow: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.flex{
+  display: flex;
+}
+.flex-1{
+  flex:1;
+}
+.flex-between {
+  justify-content: space-between;
+}
+.flex-end {
+  justify-content: flex-end;
+}
+.align-item-center{
+  align-items: center;
+}
+.flex-direction-column
+{
+  flex-direction: column;
+}
+.flex-justify-content{
+  justify-content:center;
+}
+.w100{
+  width:100%;
+}
+.flex-ver {
+  flex-direction: column;
+}
+.mr-10{
+  margin-right:10px;
+}
+.diagInfo2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; //（行数）
+  -webkit-box-orient: vertical;
+}
+.m-b10{
+  margin-bottom:10px;
+}

@@ -1,0 +1,55 @@
+$--tag-primary-color: var(--maincolor);
+$label-color: black; //麻醉单复苏单主色调
+$value-color: black; //显示内容的颜色 
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+//sidebar
+$menuBg:#304156;
+$subMenuBg:#1f2d3d;
+$menuHover:#001528;
+$mainColor: #2a82e4;
+:export {
+  label_color: $label-color;
+}
+
+$vm_fontsize: 14; // iPhone 6尺寸的根元素大小基准值
+@function rem($px) {
+  @return calc($px / $vm_fontsize ) * 1rem;
+}
+
+// 根元素大小使用 vw 单位
+$vm_design: 1280;
+
+html {
+  font-size: calc($vm_fontsize / $vm_design) * 100vw;
+
+  @media screen and (max-width: 320px) {
+    font-size: 16px;
+  }
+  @media screen and ( min-width: 321px ) and ( max-width: 750px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 751px) and (max-width: 1365px) {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1366px) and (max-width: 1920px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 1921px) and (max-width: 2560px) {
+    font-size: 12px;
+  }
+}
+
+@function vw($val) {
+  // $vw: $val / $all_width * 100;
+  // $calc: $vw / ($vw * 0 + 1) * 1vw;
+  $vw: calc($val / 1920 * 100);
+  $calc: calc($vw / ($vw * 0 + 1) * 1vw);
+  @return $calc;
+}
