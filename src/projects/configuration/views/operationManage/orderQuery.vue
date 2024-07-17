@@ -76,19 +76,19 @@
         <el-button size="small" type="primary" @click="copyText(detailContent)">复制</el-button>
       </span>
     </el-dialog>
-    <OrderExecuteRecord :show.sync="isVisibleExecuteRecordDialog" :order-data="curOrderRow"
+    <!-- <OrderExecuteRecord :show.sync="isVisibleExecuteRecordDialog" :order-data="curOrderRow"
       :showExecuteOperateBtn="false">
-    </OrderExecuteRecord>
+    </OrderExecuteRecord> -->
   </div>
 </template>
 <script>
 
 import { outerLog_orderQuery } from '@/api/configuration'
 import _ from 'lodash'
-import OrderExecuteRecord from '@/views/inpatienArea/components/docOrder/orderExecuteRecord.vue'
+// import OrderExecuteRecord from '@/views/inpatienArea/components/docOrder/orderExecuteRecord.vue'
 export default {
   name: 'DataSourceConfig',
-  components: { OrderExecuteRecord },
+  // components: { OrderExecuteRecord },
   props: {},
   data() {
     return {

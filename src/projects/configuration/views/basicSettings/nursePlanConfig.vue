@@ -137,7 +137,7 @@ import {
   nurseDiagDetail_edit,
   nurseDiagDetail_insert
 } from '@/api/configuration'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import { filterArrValue } from '@/utils/utils'
 import {
   map

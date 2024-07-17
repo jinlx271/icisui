@@ -104,7 +104,7 @@ import {
   findShiftWithPage
 } from '@/api/configuration'
 
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import { mapGetters } from 'vuex'
 import { timeToTimestamp } from '@/utils/utils'
 export default {

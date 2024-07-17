@@ -19,7 +19,7 @@
 
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
-        <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
+        <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title"  style="text-align:left"/>
       </template>
       <sidebar-item v-for="child in item.children" :key="child.path" :is-nest="true" :item="child"
         :base-path="resolvePath(child.path)" class="nest-menu" />
@@ -104,7 +104,7 @@ export default {
     redirectToPath(routePath) {
       if (this.patientInfoItem.patientInfo != null) {
         this.$store.commit('set_patientInfo', this.patientInfoItem)
-        this.$router.push({ path: routePath }) // /patient/11 找不到的路由。找不到路由，跳转第一个
+        this.$router.push({ path: routePath, query: this.$route.query }) // /patient/11 找不到的路由。找不到路由，跳转第一个
       }
     }
   }
@@ -125,5 +125,14 @@ export default {
   font-size: 10px;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
+}
+::v-deep .el-submenu__title{
+  text-align: left;
+}
+::v-deep .el-submenu .el-menu-item{
+  text-align: left;
+}
+::v-deep .el-menu-item{
+  text-align: left;
 }
 </style>

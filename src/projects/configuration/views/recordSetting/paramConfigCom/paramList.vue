@@ -113,7 +113,7 @@ export default {
   },
   components: {
     ParamEdit: () => import('./paramEdit.vue'),
-    cacheSelect: () => import('@/views/configuration/basicSettings/components/paramConfig/cacheSelect.vue')
+    cacheSelect: () => import('../../basicSettings/components/paramConfig/cacheSelect.vue')
   },
   watch: {
     formId: function(newValue, oldValue) {

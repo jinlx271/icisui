@@ -113,7 +113,7 @@ import {
 import {
   commonList
 } from '../custom-component/component-list' // 左侧列表数据
-import mixinRecordSetting from '@/views/configuration/recordSetting/mixinRecordSetting'
+import mixinRecordSetting from '../mixinRecordSetting'
 export default {
   mixins: [mixinRecordSetting],
   components: { Preview, SaveasTemp },

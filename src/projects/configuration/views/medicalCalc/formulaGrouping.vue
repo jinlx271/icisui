@@ -226,7 +226,7 @@ import {
   medCalc_deleteById, // 删除病区功能模块管理公式分组
   medicalDefine_findList // 医学计算器配置 - 自定义公式配置 - 公式 查询
 } from '@/api/configuration'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 export default {
   name: 'FormulaGrouping',
   components: { icuRegion },

@@ -184,7 +184,7 @@
   </div>
 </template>
 <script>
-import SelectTree from '@/views/configuration/authorityManagement/selectTree.vue'
+import SelectTree from '../authorityManagement/selectTree.vue'
 import {
   medicalKnow_findMedicalKnowTree,
   medicalKnow_insert,

@@ -18,7 +18,7 @@ import {
 import {
   personMoniitem_findPersonConfigMoniitem
 } from '@/api/patient'
-import patientInfoCompute from '@/views/patient/mixin/patientInfoCompute'
+import patientInfoCompute from '@/mixins/patientInfoCompute'
 export default {
   name: 'TinmceEdit',
   data() {

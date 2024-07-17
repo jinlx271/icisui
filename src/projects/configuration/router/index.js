@@ -1,14 +1,48 @@
-const configuration = [
+
+import Vue from 'vue'
+import Router from 'vue-router'
+import Layout from '../views/layout'
+Vue.use(Router)
+// const originalPush = Router.prototype.push
+// Router.prototype.push = function push(location) {
+//   return originalPush.call(this, location).catch((err) => err)
+// }
+// const originalReplace = Router.prototype.replace
+// Router.prototype.replace = function replace(location) {
+//   return originalReplace.call(this, location).catch((err) => err)
+// }
+const routerList = [
   {
     path: '/',
     name: 'root',
     meta: {
       title: '配置管理'
     },
-    redirect: { name: 'configuration_authorManagement' },
+    component: Layout
+  },
+  {
+    path: '/configuration',
+    name: 'configuration',
+    meta: {
+      title: '配置管理'
+    },
+    component: Layout
+  }
+]
+
+const configuration = [
+  {
+    path: '/configuration',
+    meta: {
+      title: '配置管理'
+    },
+    name: 'configuration',
+    hidden: true,
+    // redirect: { name: 'configuration_authorManagement' },
+    component: Layout,
     children: [
       {
-        path: '/configuration/authorManagement',
+        path: '/authorManagement',
         name: 'configuration_authorManagement',
         meta: {
           title: '权限管理'
@@ -16,33 +50,33 @@ const configuration = [
         redirect: { name: 'configuration_authorManagement_userManagement' },
         children: [
           {
-            path: '/configuration/authorManagement/userManagement',
+            path: '/authorManagement/userManagement',
             name: 'configuration_authorManagement_userManagement',
-            component: () => import('@/views/configuration/authorityManagement/userManagement.vue'),
+            component: () => import('../views/authorityManagement/userManagement.vue'),
             meta: {
               title: '用户管理'
             }
           },
           {
-            path: '/configuration/authorManagement/roleManagement',
+            path: '/authorManagement/roleManagement',
             name: 'configuration_authorManagement_roleManagement',
-            component: () => import('@/views/configuration/authorityManagement/roleManagement.vue'),
+            component: () => import('../views/authorityManagement/roleManagement.vue'),
             meta: {
               title: '角色管理'
             }
           },
           {
-            path: '/configuration/authorManagement/userRoleManagement',
+            path: '/authorManagement/userRoleManagement',
             name: 'configuration_authorManagement_userRoleManagement',
-            component: () => import('@/views/configuration/authorityManagement/userRoleManagement.vue'),
+            component: () => import('../views/authorityManagement/userRoleManagement.vue'),
             meta: {
               title: '用户角色管理'
             }
           },
           {
-            path: '/configuration/authorManagement/menuManage',
+            path: '/authorManagement/menuManage',
             name: 'configuration_authorManagement_menuManage',
-            component: () => import('@/views/configuration/authorityManagement/menuManage'),
+            component: () => import('../views/authorityManagement/menuManage'),
             meta: {
               title: '菜单管理'
             }
@@ -50,7 +84,7 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/basicSettings',
+        path: '/basicSettings',
         name: 'configuration_basicSettings',
         meta: {
           title: '基础配置'
@@ -58,363 +92,363 @@ const configuration = [
         redirect: { name: 'configuration_basicSettings_basicDictionary' },
         children: [
           {
-            path: '/configuration/basicSettings/basicData',
+            path: '/basicSettings/basicData',
             name: 'configuration_basicSettings_basicData',
-            component: () => import('@/views/configuration/basicSettings/basicData.vue'),
+            component: () => import('../views/basicSettings/basicData.vue'),
             meta: {
               title: '基础数据'
             }
           },
           {
-            path: '/configuration/basicSettings/basicDictionary',
+            path: '/basicSettings/basicDictionary',
             name: 'configuration_basicSettings_basicDictionary',
-            component: () => import('@/views/configuration/basicSettings/basicDictionary.vue'),
+            component: () => import('../views/basicSettings/basicDictionary.vue'),
             meta: {
               title: '基础字典'
             }
           },
           {
-            path: '/configuration/basicSettings/paramConfig',
+            path: '/basicSettings/paramConfig',
             name: 'configuration_basicSettings_paramConfig',
-            component: () => import('@/views/configuration/basicSettings/paramConfig.vue'),
+            component: () => import('../views/basicSettings/paramConfig.vue'),
             meta: {
               title: '参数设置'
             }
           },
           {
-            path: '/configuration/basicSettings/bedConfig',
+            path: '/basicSettings/bedConfig',
             name: 'configuration_basicSettings_bedConfig',
-            component: () => import('@/views/configuration/basicSettings/bedConfig.vue'),
+            component: () => import('../views/basicSettings/bedConfig.vue'),
             meta: {
               title: '床位管理'
             }
           },
           {
-            path: '/configuration/basicSettings/shiftDictionary',
+            path: '/basicSettings/shiftDictionary',
             name: 'configuration_basicSettings_shiftDictionary',
-            component: () => import('@/views/configuration/basicSettings/shiftDictionary.vue'),
+            component: () => import('../views/basicSettings/shiftDictionary.vue'),
             meta: {
               title: '班次字典'
             }
           },
           {
-            path: '/configuration/basicSettings/guardianshipConfig',
+            path: '/basicSettings/guardianshipConfig',
             name: 'configuration_basicSettings_guardianshipConfig',
-            component: () => import('@/views/configuration/basicSettings/guardianshipConfig.vue'),
+            component: () => import('../views/basicSettings/guardianshipConfig.vue'),
             meta: {
               title: '监护配置'
             }
           },
           {
-            path: '/configuration/basicSettings/concentrateEntry',
+            path: '/basicSettings/concentrateEntry',
             name: 'configuration_basicSettings_concentrateEntry',
-            component: () => import('@/views/configuration/basicSettings/concentrateEntry.vue'),
+            component: () => import('../views/basicSettings/concentrateEntry.vue'),
             meta: {
               title: '集中录入配置'
             }
           },
           {
-            path: '/configuration/basicSettings/catheterMatch',
+            path: '/basicSettings/catheterMatch',
             name: 'configuration_basicSettings_catheterMatch',
-            component: () => import('@/views/configuration/basicSettings/catheterMatch.vue'),
+            component: () => import('../views/basicSettings/catheterMatch.vue'),
             meta: {
               title: '导管部位匹配'
             }
           },
           {
-            path: '/configuration/basicSettings/dermaMatch',
+            path: '/basicSettings/dermaMatch',
             name: 'configuration_basicSettings_dermaMatch',
-            component: () => import('@/views/configuration/basicSettings/dermaMatch.vue'),
+            component: () => import('../views/basicSettings/dermaMatch.vue'),
             meta: {
               title: '皮肤部位匹配'
             }
           },
           {
-            path: '/configuration/basicSettings/nursingRecordTemplate',
+            path: '/basicSettings/nursingRecordTemplate',
             name: 'configuration_basicSettings_nursingRecordTemplate',
-            component: () => import('@/views/configuration/basicSettings/nursingRecordTemplate.vue'),
+            component: () => import('../views/basicSettings/nursingRecordTemplate.vue'),
             meta: {
               title: '护理记录模板'
             }
           },
           {
-            path: '/configuration/basicSettings/salvageItem',
+            path: '/basicSettings/salvageItem',
             name: 'configuration_basicSettings_salvageItem',
-            component: () => import('@/views/configuration/basicSettings/salvageItem.vue'),
+            component: () => import('../views/basicSettings/salvageItem.vue'),
             meta: {
               title: '抢救记录项'
             }
           },
 
           {
-            path: '/configuration/basicSettings/ICUArea',
+            path: '/basicSettings/ICUArea',
             name: 'configuration_basicSettings_ICUArea',
-            component: () => import('@/views/configuration/basicSettings/ICUArea.vue'),
+            component: () => import('../views/basicSettings/ICUArea.vue'),
             meta: {
               title: 'ICU病区设置'
             }
           },
           {
-            path: '/configuration/basicSettings/iCUQualitySign',
+            path: '/basicSettings/iCUQualitySign',
             name: 'configuration_basicSettings_iCUQualitySign',
-            component: () => import('@/views/configuration/basicSettings/iCUQualitySign.vue'),
+            component: () => import('../views/basicSettings/iCUQualitySign.vue'),
             meta: {
               title: 'ICU质控标识配置'
             }
           },
           {
-            path: '/configuration/basicSettings/ICUQualityControl',
+            path: '/basicSettings/ICUQualityControl',
             name: 'configuration_basicSettings_ICUQualityControl',
-            component: () => import('@/views/configuration/basicSettings/ICUQualityControl.vue'),
+            component: () => import('../views/basicSettings/ICUQualityControl.vue'),
             meta: {
               title: 'ICU质控报表配置'
             }
           },
           {
-            path: '/configuration/basicSettings/keyPatientsConfig',
+            path: '/basicSettings/keyPatientsConfig',
             name: 'configuration_basicSettings_keyPatientsConfig',
-            component: () => import('@/views/configuration/basicSettings/keyPatientsConfig.vue'),
+            component: () => import('../views/basicSettings/keyPatientsConfig.vue'),
             meta: {
               title: '重点患者情况设置'
             }
           },
           {
-            path: '/configuration/basicSettings/vitalSignsItemConfig',
+            path: '/basicSettings/vitalSignsItemConfig',
             name: 'configuration_basicSettings_vitalSignsItemConfig',
-            component: () => import('@/views/configuration/basicSettings/vitalSignsItemConfig.vue'),
+            component: () => import('../views/basicSettings/vitalSignsItemConfig.vue'),
             meta: {
               title: '生命体征曲线设置'
             }
           },
           {
-            path: '/configuration/basicSettings/concernsConfig',
+            path: '/basicSettings/concernsConfig',
             name: 'configuration_basicSettings_concernsConfig',
-            component: () => import('@/views/configuration/basicSettings/concernsConfig.vue'),
+            component: () => import('../views/basicSettings/concernsConfig.vue'),
             meta: {
               title: '关注项配置'
             }
           },
           {
-            path: '/configuration/basicSettings/drugDosageConfig',
+            path: '/basicSettings/drugDosageConfig',
             name: 'configuration_basicSettings_drugDosageConfig',
-            component: () => import('@/views/configuration/basicSettings/drugDosageConfig.vue'),
+            component: () => import('../views/basicSettings/drugDosageConfig.vue'),
             meta: {
               title: '药品剂量换算设置'
             }
           },
           {
-            path: '/configuration/basicSettings/flowRateUnitConfig',
+            path: '/basicSettings/flowRateUnitConfig',
             name: 'configuration_basicSettings_flowRateUnitConfig',
-            component: () => import('@/views/configuration/basicSettings/flowRateUnitConfig.vue'),
+            component: () => import('../views/basicSettings/flowRateUnitConfig.vue'),
             meta: {
               title: '流速单位换算配置'
             }
           },
           {
-            path: '/configuration/basicSettings/flowRateCalcConfig',
+            path: '/basicSettings/flowRateCalcConfig',
             name: 'configuration_basicSettings_flowRateCalcConfig',
-            component: () => import('@/views/configuration/basicSettings/flowRateCalcConfig.vue'),
+            component: () => import('../views/basicSettings/flowRateCalcConfig.vue'),
             meta: {
               title: '流速计算配置'
             }
           },
           {
-            path: '/configuration/basicSettings/pipeMonitorMatch',
+            path: '/basicSettings/pipeMonitorMatch',
             name: 'configuration_basicSettings_pipeMonitorMatch',
-            component: () => import('@/views/configuration/basicSettings/pipeMonitorMatch.vue'),
+            component: () => import('../views/basicSettings/pipeMonitorMatch.vue'),
             meta: {
               title: '导管监护项匹配'
             }
           },
 
           {
-            path: '/configuration/basicSettings/drugUsageConfig',
+            path: '/basicSettings/drugUsageConfig',
             name: 'configuration_basicSettings_drugUsageConfig',
-            component: () => import('@/views/configuration/basicSettings/drugUsageConfig.vue'),
+            component: () => import('../views/basicSettings/drugUsageConfig.vue'),
             meta: {
               title: '药品用法设置'
             }
           },
           {
-            path: '/configuration/basicSettings/orderExcuteFreq',
+            path: '/basicSettings/orderExcuteFreq',
             name: 'configuration_basicSettings_orderExcuteFreq',
-            component: () => import('@/views/configuration/basicSettings/orderExcuteFreq.vue'),
+            component: () => import('../views/basicSettings/orderExcuteFreq.vue'),
             meta: {
               title: '医嘱执行频次设置'
             }
           },
           {
-            path: '/configuration/basicSettings/moniEventConfig',
+            path: '/basicSettings/moniEventConfig',
             name: 'configuration_basicSettings_moniEventConfig',
-            component: () => import('@/views/configuration/basicSettings/moniEventConfig.vue'),
+            component: () => import('../views/basicSettings/moniEventConfig.vue'),
             meta: {
               title: '监护事件设置'
             }
           },
           {
-            path: '/configuration/basicSettings/diagnoseClassify',
+            path: '/basicSettings/diagnoseClassify',
             name: 'configuration_basicSettings_diagnoseClassify',
-            component: () => import('@/views/configuration/basicSettings/diagnoseClassify.vue'),
+            component: () => import('../views/basicSettings/diagnoseClassify.vue'),
             meta: {
               title: '诊断分类系数配置'
             }
           },
           {
-            path: '/configuration/basicSettings/diseaseConfig',
+            path: '/basicSettings/diseaseConfig',
             name: 'configuration_basicSettings_diseaseConfig',
-            component: () => import('@/views/configuration/basicSettings/diseaseConfig.vue'),
+            component: () => import('../views/basicSettings/diseaseConfig.vue'),
             meta: {
               title: '病种配置'
             }
           },
           {
-            path: '/configuration/basicSettings/moniitemInspection',
+            path: '/basicSettings/moniitemInspection',
             name: 'configuration_basicSettings_moniitemInspection',
-            component: () => import('@/views/configuration/basicSettings/moniitemInspection.vue'),
+            component: () => import('../views/basicSettings/moniitemInspection.vue'),
             meta: {
               title: '检验指标对照'
             }
           },
           {
-            path: '/configuration/basicSettings/templateConfig',
+            path: '/basicSettings/templateConfig',
             name: 'configuration_basicSettings_templateConfig',
-            component: () => import('@/views/configuration/basicSettings/templateConfig.vue'),
+            component: () => import('../views/basicSettings/templateConfig.vue'),
             meta: {
               title: '模板配置'
             }
           },
           {
-            path: '/configuration/basicSettings/helpConfig',
+            path: '/basicSettings/helpConfig',
             name: 'configuration_basicSettings_helpConfig',
-            component: () => import('@/views/configuration/basicSettings/helpConfig.vue'),
+            component: () => import('../views/basicSettings/helpConfig.vue'),
             meta: {
               title: '操作手册配置'
             }
           },
           {
-            path: '/configuration/basicSettings/backgroundLogoMana',
+            path: '/basicSettings/backgroundLogoMana',
             name: 'configuration_basicSettings_backgroundLogoMana',
-            component: () => import('@/views/configuration/basicSettings/backgroundLogoMana.vue'),
+            component: () => import('../views/basicSettings/backgroundLogoMana.vue'),
             meta: {
               title: '背景LOGO管理'
             }
           },
           {
-            path: '/configuration/basicSettings/anasDrugSetting',
+            path: '/basicSettings/anasDrugSetting',
             name: 'configuration_basicSettings_anasDrugSetting',
-            component: () => import('@/views/configuration/basicSettings/anasDrugSetting.vue'),
+            component: () => import('../views/basicSettings/anasDrugSetting.vue'),
             meta: {
               title: '镇痛镇静药品设置'
             }
           },
           {
-            path: '/configuration/basicSettings/dialysisDrugSetting',
+            path: '/basicSettings/dialysisDrugSetting',
             name: 'configuration_basicSettings_dialysisDrugSetting',
-            component: () => import('@/views/configuration/basicSettings/dialysisDrugSetting.vue'),
+            component: () => import('../views/basicSettings/dialysisDrugSetting.vue'),
             meta: {
               title: '透析配液药品设置'
             }
           },
           {
-            path: '/configuration/basicSettings/patientIconSetting',
+            path: '/basicSettings/patientIconSetting',
             name: 'configuration_basicSettings_patientIconSetting',
-            component: () => import('@/views/configuration/basicSettings/patientIconSetting.vue'),
+            component: () => import('../views/basicSettings/patientIconSetting.vue'),
             meta: {
               title: '患者标识配置'
             }
           },
           {
-            path: '/configuration/basicSettings/outzoneRuleConfig',
+            path: '/basicSettings/outzoneRuleConfig',
             name: 'configuration_basicSettings_outzoneRuleConfig',
-            component: () => import('@/views/configuration/basicSettings/outzoneRuleConfig.vue'),
+            component: () => import('../views/basicSettings/outzoneRuleConfig.vue'),
             meta: {
               title: '出区标准配置'
             }
           },
           {
-            path: '/configuration/basicSettings/automaticOrder',
+            path: '/basicSettings/automaticOrder',
             name: 'configuration_basicSettings_automaticOrder',
-            component: () => import('@/views/configuration/basicSettings/automaticOrder.vue'),
+            component: () => import('../views/basicSettings/automaticOrder.vue'),
             meta: {
               title: '自动提取医嘱配置'
             }
           },
           {
-            path: '/configuration/basicSettings/consuting',
+            path: '/basicSettings/consuting',
             name: 'configuration_basicSettings_consuting',
-            component: () => import('@/views/configuration/basicSettings/consuting.vue'),
+            component: () => import('../views/basicSettings/consuting.vue'),
             meta: {
               title: '病情分析配置'
             }
           },
           {
-            path: '/configuration/basicSettings/verificationRules',
+            path: '/basicSettings/verificationRules',
             name: 'configuration_basicSettings_verificationRules',
-            component: () => import('@/views/configuration/basicSettings/verificationRules.vue'),
+            component: () => import('../views/basicSettings/verificationRules.vue'),
             meta: {
               title: '数据校验规则配置'
             }
           },
           {
-            path: '/configuration/basicSettings/dictionaryConversion',
+            path: '/basicSettings/dictionaryConversion',
             name: 'configuration_basicSettings_dictionaryConversion',
-            component: () => import('@/views/configuration/basicSettings/dictionaryConversion.vue'),
+            component: () => import('../views/basicSettings/dictionaryConversion.vue'),
             meta: {
               title: '字典转换对照'
             }
           },
           {
-            path: '/configuration/basicSettings/dataAcquisition',
+            path: '/basicSettings/dataAcquisition',
             name: 'configuration_basicSettings_dataAcquisition',
-            component: () => import('@/views/configuration/basicSettings/dataAcquisition.vue'),
+            component: () => import('../views/basicSettings/dataAcquisition.vue'),
             meta: {
               title: '数据采集对照'
             }
           },
           {
-            path: '/configuration/basicSettings/qcConfig',
+            path: '/basicSettings/qcConfig',
             name: 'configuration_basicSettings_qcConfig',
-            component: () => import('@/views/configuration/basicSettings/qcConfig.vue'),
+            component: () => import('../views/basicSettings/qcConfig.vue'),
             meta: {
               title: '质控查询界面配置'
             }
           },
           {
-            path: '/configuration/basicSettings/aidConfig',
+            path: '/basicSettings/aidConfig',
             name: 'configuration_basicSettings_aidConfig',
-            component: () => import('@/views/configuration/basicSettings/aidConfig.vue'),
+            component: () => import('../views/basicSettings/aidConfig.vue'),
             meta: {
               title: '护理书写助手配置'
             }
           },
           {
-            path: '/configuration/basicSettings/patientMonitorConfig',
+            path: '/basicSettings/patientMonitorConfig',
             name: 'configuration_basicSettings_patientMonitorConfig',
-            component: () => import('@/views/configuration/basicSettings/patientMonitorConfig.vue'),
+            component: () => import('../views/basicSettings/patientMonitorConfig.vue'),
             meta: {
               title: '患者监控配置'
             }
           },
           {
-            path: '/configuration/basicSettings/KPISet',
+            path: '/basicSettings/KPISet',
             name: 'configuration_basicSettings_KPISet',
-            component: () => import('@/views/configuration/basicSettings/KPISet.vue'),
+            component: () => import('../views/basicSettings/KPISet.vue'),
             meta: {
               title: '绩效加分项配置'
             }
           },
           {
-            path: '/configuration/basicSettings/nursePlanConfig',
+            path: '/basicSettings/nursePlanConfig',
             name: 'configuration_basicSettings_nursePlanConfig',
-            component: () => import('@/views/configuration/basicSettings/nursePlanConfig.vue'),
+            component: () => import('../views/basicSettings/nursePlanConfig.vue'),
             meta: {
               title: '护理计划模板配置'
             }
           },
           {
-            path: '/configuration/basicSettings/orderMatchBusinessConfig',
+            path: '/basicSettings/orderMatchBusinessConfig',
             name: 'configuration_basicSettings_orderMatchBusinessConfig',
-            component: () => import('@/views/configuration/basicSettings/orderMatchBusinessConfig.vue'),
+            component: () => import('../views/basicSettings/orderMatchBusinessConfig.vue'),
             meta: {
               title: '医嘱匹配业务配置'
             }
@@ -422,7 +456,7 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/medicalCalc',
+        path: '/medicalCalc',
         name: 'configuration_medicalCalc',
         meta: {
           title: '医学计算器配置'
@@ -430,17 +464,17 @@ const configuration = [
         redirect: { name: 'configuration_medicalCalc_formulaGrouping' },
         children: [
           {
-            path: '/configuration/medicalCalc/formulaGrouping',
+            path: '/medicalCalc/formulaGrouping',
             name: 'configuration_medicalCalc_formulaGrouping',
-            component: () => import('@/views/configuration/medicalCalc/formulaGrouping.vue'),
+            component: () => import('../views/medicalCalc/formulaGrouping.vue'),
             meta: {
               title: '公式分组配置'
             }
           },
           {
-            path: '/configuration/medicalCalc/customFormula',
+            path: '/medicalCalc/customFormula',
             name: 'configuration_medicalCalc_customFormula',
-            component: () => import('@/views/configuration/medicalCalc/customFormula.vue'),
+            component: () => import('../views/medicalCalc/customFormula.vue'),
             meta: {
               title: '自定义公式配置'
             }
@@ -448,7 +482,7 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/recordSetting',
+        path: '/recordSetting',
         name: 'configuration_recordSetting',
         meta: {
           title: '文书模板配置'
@@ -456,59 +490,59 @@ const configuration = [
         redirect: { name: 'configuration_recordSetting_recordList' },
         children: [
           {
-            path: '/configuration/recordSetting/recordList',
+            path: '/recordSetting/recordList',
             name: 'configuration_recordSetting_recordList',
-            component: () => import('@/views/configuration/recordSetting/recordList.vue'),
+            component: () => import('../views/recordSetting/recordList.vue'),
             meta: {
               title: '表格组件'
             }
           },
           {
-            path: '/configuration/recordSetting/index',
+            path: '/recordSetting/index',
             name: 'configuration_recordSetting_index',
-            component: () => import('@/views/configuration/recordSetting/index.vue'),
+            component: () => import('../views/recordSetting/index.vue'),
             meta: {
               title: '文书模板配置'
             },
             hidden: true
           },
           {
-            path: '/configuration/recordSetting/recordTempList',
+            path: '/recordSetting/recordTempList',
             name: 'configuration_recordSetting_recordTempList',
-            component: () => import('@/views/configuration/recordSetting/recordTempList.vue'),
+            component: () => import('../views/recordSetting/recordTempList.vue'),
             meta: {
               title: '文书模板列表'
             }
           },
           {
-            path: '/configuration/recordSetting/dataSourceList',
+            path: '/recordSetting/dataSourceList',
             name: 'configuration_recordSetting_dataSourceList',
-            component: () => import('@/views/configuration/recordSetting/dataSourceList.vue'),
+            component: () => import('../views/recordSetting/dataSourceList.vue'),
             meta: {
               title: '文书数据源'
             }
           },
           {
-            path: '/configuration/recordSetting/tinymacEditor',
+            path: '/recordSetting/tinymacEditor',
             name: 'configuration_recordSetting_tinymacEditor',
-            component: () => import('@/views/configuration/recordSetting/tinymacEditor'),
+            component: () => import('../views/recordSetting/tinymacEditor'),
             meta: {
               title: '特护单配置'
             },
             hidden: true
           },
           {
-            path: '/configuration/recordSetting/indexD',
+            path: '/recordSetting/indexD',
             name: 'configuration_recordSetting_indexD',
-            component: () => import('@/views/configuration/recordSetting/indexD.vue'),
+            component: () => import('../views/recordSetting/indexD.vue'),
             meta: {
               title: '特护单数据配置'
             }
           },
           {
-            path: '/configuration/recordSetting/wardTempList',
+            path: '/recordSetting/wardTempList',
             name: 'configuration_recordSetting_wardTempList',
-            component: () => import('@/views/configuration/recordSetting/wardTempList.vue'),
+            component: () => import('../views/recordSetting/wardTempList.vue'),
             meta: {
               title: '病区文书列表配置'
             }
@@ -516,7 +550,7 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/evaluationForms',
+        path: '/evaluationForms',
         name: 'configuration_evaluationForms',
         meta: {
           title: '评估单管理'
@@ -524,50 +558,50 @@ const configuration = [
         redirect: { name: 'configuration_evaluationForms_dataMetaConfig' },
         children: [
           {
-            path: '/configuration/evaluationForms/dataMetaConfig',
+            path: '/evaluationForms/dataMetaConfig',
             name: 'configuration_evaluationForms_dataMetaConfig',
-            component: () => import('@/views/configuration/evaluationForms/dataMetaConfig.vue'),
+            component: () => import('../views/evaluationForms/dataMetaConfig.vue'),
             meta: {
               title: '元数据配置'
             }
           },
           {
-            path: '/configuration/evaluationForms/componentdesign',
+            path: '/evaluationForms/componentdesign',
             name: 'configuration_evaluationForms_componentdesign',
-            component: () => import('@/views/configuration/evaluationForms/componentdesign/index.vue'),
+            component: () => import('../views/evaluationForms/componentdesign/index.vue'),
             meta: {
               title: '组件块配置'
             }
           },
           {
-            path: '/configuration/evaluationForms/componentdesign/add',
+            path: '/evaluationForms/componentdesign/add',
             name: 'configuration_evaluationForms_componentdesign_add',
-            component: () => import('@/views/configuration/evaluationForms/componentdesign/add.vue'),
+            component: () => import('../views/evaluationForms/componentdesign/add.vue'),
             hidden: true,
             meta: {
               title: '组件块配置新增'
             }
           },
           {
-            path: '/configuration/evaluationForms/areaEvaluationForm',
+            path: '/evaluationForms/areaEvaluationForm',
             name: 'configuration_evaluationForms_areaEvaluationForm',
-            component: () => import('@/views/configuration/evaluationForms/areaEvaluationForm.vue'),
+            component: () => import('../views/evaluationForms/areaEvaluationForm.vue'),
             meta: {
               title: '评估表配置'
             }
           },
           {
-            path: '/configuration/evaluationForms/evaluationFormConfig',
+            path: '/evaluationForms/evaluationFormConfig',
             name: 'configuration_evaluationForms_evaluationFormConfig',
-            component: () => import('@/views/configuration/evaluationForms/evaluationFormConfig.vue'),
+            component: () => import('../views/evaluationForms/evaluationFormConfig.vue'),
             meta: {
               title: '病区评估表配置'
             }
           },
           {
-            path: '/configuration/evaluationForms/NISEvaluationForm',
+            path: '/evaluationForms/NISEvaluationForm',
             name: 'configuration_evaluationForms_NISEvaluationForm',
-            component: () => import('@/views/configuration/evaluationForms/NISEvaluationForm.vue'),
+            component: () => import('../views/evaluationForms/NISEvaluationForm.vue'),
             meta: {
               title: 'NIS评估表对照'
             }
@@ -575,16 +609,16 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/intelligence',
+        path: '/intelligence',
         name: 'configuration_intelligence',
         meta: {
           title: '数据源配置'
         },
         children: [
           {
-            path: '/configuration/evaluationForms/dataSourceConfig',
+            path: '/evaluationForms/dataSourceConfig',
             name: 'configuration_evaluationForms_dataSourceConfig',
-            component: () => import('@/views/configuration/evaluationForms/dataSourceConfig.vue'),
+            component: () => import('../views/evaluationForms/dataSourceConfig.vue'),
             meta: {
               title: '数据源配置'
             }
@@ -592,7 +626,7 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/operationManage',
+        path: '/operationManage',
         name: 'configuration_operationManage',
         meta: {
           title: '运维管理'
@@ -600,33 +634,33 @@ const configuration = [
         redirect: { name: 'configuration_operationManage_interfaceLog' },
         children: [
           {
-            path: '/configuration/operationManage/interfaceLog',
+            path: '/operationManage/interfaceLog',
             name: 'configuration_operationManage_interfaceLog',
-            component: () => import('@/views/configuration/operationManage/interfaceLog.vue'),
+            component: () => import('../views/operationManage/interfaceLog.vue'),
             meta: {
               title: '接口日志查询'
             }
           },
           {
-            path: '/configuration/operationManage/sysErrorLog',
+            path: '/operationManage/sysErrorLog',
             name: 'configuration_operationManage_sysErrorLog',
-            component: () => import('@/views/configuration/operationManage/sysErrorLog.vue'),
+            component: () => import('../views/operationManage/sysErrorLog.vue'),
             meta: {
               title: '系统异常日志查询'
             }
           },
           {
-            path: '/configuration/operationManage/orderQuery',
+            path: '/operationManage/orderQuery',
             name: 'configuration_operationManage_orderQuery',
-            component: () => import('@/views/configuration/operationManage/orderQuery.vue'),
+            component: () => import('../views/operationManage/orderQuery.vue'),
             meta: {
               title: '医嘱查询'
             }
           },
           {
-            path: '/configuration/operationManage/deviceMonitor',
+            path: '/operationManage/deviceMonitor',
             name: 'configuration_operationManage_deviceMonitor',
-            component: () => import('@/views/configuration/operationManage/deviceMonitor.vue'),
+            component: () => import('../views/operationManage/deviceMonitor.vue'),
             meta: {
               title: '设备采集监测'
             }
@@ -634,7 +668,7 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/productAuthorization',
+        path: '/productAuthorization',
         name: 'configuration_productAuthorization',
         meta: {
           title: '授权管理'
@@ -642,9 +676,9 @@ const configuration = [
         redirect: { name: 'configuration_productAuthorization' },
         children: [
           {
-            path: '/configuration/productAuthorization',
+            path: '/productAuthorization',
             name: 'configuration_productAuthorization',
-            component: () => import('@/views/configuration/productAuthorization/index.vue'),
+            component: () => import('../views/productAuthorization/index.vue'),
             meta: {
               title: '授权管理'
             }
@@ -652,7 +686,7 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/knowledgeSystem',
+        path: '/knowledgeSystem',
         name: 'configuration_knowledgeSystem',
         meta: {
           title: '知识体系'
@@ -660,25 +694,25 @@ const configuration = [
         redirect: { name: 'configuration_basicSettings_warningConfig' },
         children: [
           {
-            path: '/configuration/basicSettings/warningConfig',
+            path: '/basicSettings/warningConfig',
             name: 'configuration_basicSettings_warningConfig',
-            component: () => import('@/views/configuration/basicSettings/warningConfig.vue'),
+            component: () => import('../views/basicSettings/warningConfig.vue'),
             meta: {
               title: '预警管理'
             }
           },
           {
-            path: '/configuration/basicSettings/pipeInfectRisk',
+            path: '/basicSettings/pipeInfectRisk',
             name: 'configuration_basicSettings_pipeInfectRisk',
-            component: () => import('@/views/configuration/basicSettings/pipeInfectRisk.vue'),
+            component: () => import('../views/basicSettings/pipeInfectRisk.vue'),
             meta: {
               title: '导管感染风险配置'
             }
           },
           {
-            path: '/configuration/knowledgeBase/medicine',
+            path: '/knowledgeBase/medicine',
             name: 'configuration_knowledgeBase_medicine',
-            component: () => import('@/views/configuration/knowledgeBase/medicine'),
+            component: () => import('../views/knowledgeBase/medicine'),
             meta: {
               title: '医学知识库配置'
             }
@@ -686,7 +720,7 @@ const configuration = [
         ]
       },
       {
-        path: '/configuration/nutrition',
+        path: '/nutrition',
         name: 'configuration_nutrition',
         meta: {
           title: '营养管理配置'
@@ -694,17 +728,17 @@ const configuration = [
         redirect: { name: 'configuration_nutrition_stressList' },
         children: [
           {
-            path: '/configuration/nutrition/stressList',
+            path: '/nutrition/stressList',
             name: 'configuration_nutrition_stressList',
-            component: () => import('@/views/configuration/nutrition/stressList.vue'),
+            component: () => import('../views/nutrition/stressList.vue'),
             meta: {
               title: '应激因素配置'
             }
           },
           {
-            path: '/configuration/nutrition/conversionList',
+            path: '/nutrition/conversionList',
             name: 'configuration_nutrition_conversionList',
-            component: () => import('@/views/configuration/nutrition/conversionList.vue'),
+            component: () => import('../views/nutrition/conversionList.vue'),
             meta: {
               title: '营养换算配置'
             }
@@ -714,5 +748,43 @@ const configuration = [
     ]
   }
 ]
+// configuration.forEach(item => {
+//   if (item.children.length > 0) {
+//     const info = { ...item }
+//     if (info.children) {
+//       delete info.children
+//     }
+//     routerList.push(info)
+//     item.children?.forEach(c1 => {
+//       const obj = { ...c1 }
+//       if (c1.children) {
+//         delete obj.children
+//       }
+//       routerList.push(obj)
+//       c1.children?.forEach(c2 => {
+//         routerList.push(c2)
+//       })
+//     })
+//   } else {
+//     routerList.push(item)
+//   }
+// })
+console.log('routerList', routerList)
+const createRouter = () =>
+  new Router({
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({ y: 0 }),
+    settingRoutes: configuration,
+    routes: routerList
+  })
 
-export default configuration
+const router = createRouter()
+
+// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
+
+export default router
+

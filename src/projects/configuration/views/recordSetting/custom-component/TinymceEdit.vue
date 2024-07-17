@@ -4,7 +4,7 @@
 <script>
 import { debounce } from 'lodash'
 import { getKey, getStyle } from '@/utils/utils'
-import { renderData, adjustTableWidth, adjustTableHeight } from '@/views/configuration/recordSetting/tinymacEditor/tableRender'
+import { renderData, adjustTableWidth, adjustTableHeight } from '../tinymacEditor/tableRender'
 export default {
   name: 'TinmceEdit',
   data() {

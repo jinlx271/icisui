@@ -3,6 +3,7 @@ const date = new Date(execSync('git show -s --format=%cd').toString()) // 日期
 const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim() // 当前提交的版本号
 const argv = process.argv
 const branchArr = argv[argv.length - 1].split('=')
+const build_on_branch = (process.env.build_on_branch || '') + (process.env.current_version || '') + (process.env.datetimes || '')
 const versionMessage = (branchArr[0] == 'branch' ? branchArr[1] : '') + '#' + (build_on_branch || branch) + `日期:${date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()}`
 const config = {
   configuration: {
@@ -33,7 +34,8 @@ const config = {
           }
         }
       }
-    }
+    },
+    
   },
   common: {
     pages: {
@@ -71,6 +73,7 @@ const config = {
         entry: "src/projects/wardOverview/main.js",
         template: "public/index.html",
         filename: "index.html",
+
         title: '重症管理系统',
         versionMessage: versionMessage,
         chunks: ['chunk-vendors', 'chunk-common', 'index']
@@ -94,6 +97,6 @@ const config = {
         }
       }
     }
-  },
+  }
 };
 module.exports = config;

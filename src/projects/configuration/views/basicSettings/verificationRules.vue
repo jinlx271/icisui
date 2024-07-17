@@ -105,7 +105,7 @@
 <script>
 import { mapGetters } from 'vuex' // 存储方式
 import { verificationRules_deleteById, verificationOperation_findVerificationOperations, verificationOperation_edit, verificationRules_findVerificationRules, verificationRules_edit, verificationRules_insert } from '@/api/configuration'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 export default {
   name: 'VerificationRules',
   components: {

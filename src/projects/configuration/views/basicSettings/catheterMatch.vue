@@ -128,10 +128,10 @@ import {
   dictItem_findAllWithPage
 } from '@/api/configuration'
 
-import BodyImage from '@/views/patient/components/pipelineCare/bodyImage'
-import PipeDialog from '@/views/configuration/basicSettings/cathereter/pipeDialog'
-import PipePosotionDialog from '@/views/configuration/basicSettings/cathereter/pipePosotionDialog'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import BodyImage from '@/components/bodyImage/bodyImage'
+import PipeDialog from '../basicSettings/cathereter/pipeDialog'
+import PipePosotionDialog from '../basicSettings/cathereter/pipePosotionDialog'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 
 export default {
   name: 'CatheterMatch',

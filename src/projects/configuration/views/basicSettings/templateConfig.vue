@@ -96,7 +96,7 @@ import {
   template_insertTemplate// 新增模板
 
 } from '@/api/configuration'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import { mapGetters } from 'vuex'
 import { debounce } from 'lodash'
 import {

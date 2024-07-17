@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { filterArrValue } from '../../../../../../../../utils/utils'
+import { filterArrValue } from '@/utils/utils'
 export default {
   name: 'Wninput',
   props: {

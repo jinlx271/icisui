@@ -4,20 +4,20 @@
   </div>
 </template>
 <script>
-// import Watermark from "mmcp-watermark";
 export default {
-  name: "App",
+  name: 'App',
   data() {
-    return {};
+    return {}
   },
   computed: {},
   beforeRouteLeave() {},
   mounted() {
-    // const watermark = new Watermark();
-    // watermark.render(this);
+
   },
-  methods: {}
-};
+  methods: {
+
+  }
+}
 </script>
 <style lang="scss">
 #app {

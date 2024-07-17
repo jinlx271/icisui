@@ -110,7 +110,7 @@ import {
 } from '@/api/configuration'
 import { debounce } from 'lodash'
 import { mapGetters } from 'vuex' // 存储方式
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 export default {
   name: 'BrugUsageConfig',
   components: { icuRegion },

@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import { debounce } from 'lodash'
 import {
   skinPosi_batchInsert,
@@ -83,8 +83,8 @@ import {
   //   skinPosi_edit,
   skinPosi_findWithPage
 } from '@/api/configuration'
-import BodyImage from '@/views/patient/components/pipelineCare/bodyImage'
-import SkipPosotionDialog from '@/views/configuration/basicSettings/cathereter/skipPosotionDialog'
+import BodyImage from '@/components/bodyImage/bodyImage'
+import SkipPosotionDialog from '../basicSettings/cathereter/skipPosotionDialog'
 
 import { mapGetters } from 'vuex'
 export default {

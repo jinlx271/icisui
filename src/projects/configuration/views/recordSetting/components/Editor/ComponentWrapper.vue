@@ -36,7 +36,7 @@ const components = [
 const obj = {}
 // const context=require.context(`@//views/configuration/recordSetting/custom-component/`,false,)
 components.forEach(key => {
-  obj[key] = require(`@/views/configuration/recordSetting/custom-component/${key}.vue`).default
+  obj[key] = require(`../../custom-component/${key}.vue`).default
 })
 
 export default {

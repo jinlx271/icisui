@@ -56,7 +56,7 @@ import {
 
 import tinymce from 'tinymce/tinymce' // tinymce默认hidden，不引入不显示
 import Editor from '@tinymce/tinymce-vue'// 编辑器引入
-import '@/views/configuration/recordSetting/tinymacEditor/tinymce/icons/default/icons.js' // 图标文件
+import '../../recordSetting/tinymacEditor/tinymce/icons/default/icons.js' // 图标文件
 import 'tinymce/themes/silver/theme'// 编辑器主题
 
 import 'tinymce/plugins/link' // 超链接

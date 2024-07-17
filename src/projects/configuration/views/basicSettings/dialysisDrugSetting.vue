@@ -145,7 +145,7 @@ import {
   dialysisDispensing_deleteById,
   dialysisDispensing_findDialysisDispensingWithPage // 获取分页
 } from '@/api/configuration'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import { mapGetters } from 'vuex'
 // import { frontFilter } from '@/utils'
 export default {

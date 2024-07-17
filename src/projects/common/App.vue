@@ -106,7 +106,7 @@ import { getCookie } from '@/utils/cookie' // 验权
 import { WaterMark, verification_queryVerifiyLogUtils } from '@/utils/utils'
 import { moniitemRecord_getMoniitemWarningRecord } from '@/api/configuration'
 import { concern_queryConcernMatters } from '@/api/news'
-import eventBus from '@/views/configuration/recordSetting/utils/eventBus'
+import eventBus from '@/utils/eventBus'
 import {
   patientInfo_getPaientInfo
 } from '@/api/patient'

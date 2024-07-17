@@ -15,7 +15,7 @@
         <!-- 可能只有一级,可能有二级 -->
         <div @click="noticeFc" v-for="item in mainMenu" :key="item.path">
           <router-link v-if="showItem(item)" :class="acitiveClass(item.path)" :ref="`menuPathList${item.path}`"
-            :to="{ path: item.path, query: { menuId: item.id, width: width, height: height } }">
+            :to="{ path: '/layout', query: { menuId: item.id, width: width, height: height,currentModel:item.path } }">
             <!-- 二级菜单的 -->
             <!-- <el-submenu v-if="item.isLeftMenu !== 1 && item.children && item.children.lenght > 0"  :index="index">
               <template slot="title">{{item.name}}</template>
@@ -268,7 +268,7 @@ import {
   operationManual_list,
   schedule_queryWorkSchedules
 } from '@/api/configuration'
-import limitFeatMixin from '@/views/layout/mixin/limitFeatMixin'
+import limitFeatMixin from '@/mixins/limitFeatMixin'
 import { getUserWardList } from '@/api/login'
 import { solar2lunar } from 'solarlunar'
 import {
@@ -549,6 +549,7 @@ export default {
     // this.noticeFc()
   },
   mounted() {
+    console.log('this.mainMenu', this.mainMenu)
     if (this.currentUserWard) {
       this.currentWardCode = this.currentUserWard.wardCode
       this.systemInfoName = this.currentUserWard.areaName || this.systemInfo.name && this.systemInfo.name.substr(0, 10) || ''

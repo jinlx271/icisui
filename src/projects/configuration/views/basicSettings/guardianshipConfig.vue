@@ -202,7 +202,7 @@ import {
   moniitem_multipleListPage,
   wardModuleMoniitem_getMaxSort
 } from '@/api/configuration'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 export default {
   name: 'GuardianshipConfig',
   components: { icuRegion },

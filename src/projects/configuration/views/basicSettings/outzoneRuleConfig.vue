@@ -158,7 +158,7 @@ import {
 } from '@/api/configuration'
 
 import _ from 'lodash'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 export default {
   name: 'OutzoneRule',
   components: {

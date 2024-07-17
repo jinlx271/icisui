@@ -3,14 +3,8 @@
     <div class="Header" v-if="limitFeat!=1" >
       <menuHead @refresh="refresh"></menuHead>
     </div>
-    <div class="LMContiner" :key="timestamp">
-      <div class="Left"  :class="{'LeftCss' : $route.path.indexOf('/configuration')!= -1}" v-if="limitFeat!=1&&$route.path!='/configuration/recordSetting'&&$route.path!='/configuration/recordSettingS'">
-
-        <sidebar></sidebar>
-      </div>
-      <div class="Main">
-        <app-main></app-main>
-      </div>
+    <div class="LMContiner" :key="timestamp" id="commonLayout">
+      <iframe id="commonIframe" v-if="$route.query.currentModel.indexOf('/configuration')!= -1 " :src="'http://172.23.15.127:8081/#/configuration?token=tempToken&height='+this.height+'&width='+this.width+'&limitFeat=1&userID='+userInfo.userName" class="w100" style=" border:none;overflow:hidden" @load="setWindowSize"></iframe>
     </div>
   </div>
 </template>
@@ -18,26 +12,26 @@
 <script>
 import { mapGetters } from 'vuex'
 import menuHead from './menuHead/index' // 公共头部
-import { Sidebar, AppMain } from './components'
-import limitFeatMixin from '@/views/layout/mixin/limitFeatMixin'
+import limitFeatMixin from '@/mixins/limitFeatMixin'
 export default {
   name: 'Layout',
   mixins: [limitFeatMixin],
   components: {
-    menuHead,
-    Sidebar,
-    AppMain
+    menuHead
   },
   data() {
     return {
-      timestamp: 0
+      timestamp: 0,
+      width: 0,
+      height: 0
     }
   },
   computed: {
-    ...mapGetters([])
+    ...mapGetters(['userInfo'])
   },
   mounted() {
-
+    this.width = document.querySelector('#commonLayout').offsetWidth
+    this.height = document.querySelector('#commonLayout').offsetHeight
   },
   created() { },
   watch: {
@@ -48,11 +42,25 @@ export default {
         }
       },
       immediate: true
+    },
+    '$route.query': {
+      handler: function (val) {
+         this.timestamp = new Date().getTime()
+      },
+      immediate: true
     }
   },
   methods: {
     refresh() {
       this.timestamp = new Date().getTime()
+    },
+    setWindowSize() {
+      // var iframe = document.getElementById('commonIframe')
+      // var body = iframe.contentDocument || iframe.contentWindow.document
+      // body.body.style.width = '100%'
+      // console.log('this.height', this.height)
+      // body.body.style.height = this.height + 'px'
+      // body.body.style.overFlow = 'hidden'
     }
   },
   beforeDestroy() {

@@ -22,7 +22,6 @@
     "*.{vue,js,ts}": "eslint --fix"
   },
   "dependencies": {
-    "cross-env": "^6.0.3",
     "@tinymce/tinymce-vue": "^3.0.1",
     "@vue/composition-api": "^1.4.9",
     "all": "0.0.0",
@@ -31,6 +30,7 @@
     "chalk": "2.4.2",
     "clipboard": "^2.0.11",
     "core-js": "^3.6.5",
+    "cross-env": "^6.0.3",
     "dayjs": "^1.8.34",
     "diff": "^5.1.0",
     "echarts": "^4.8.0",
@@ -87,7 +87,7 @@
     "stylus-loader": "^3.0.2",
     "svg-sprite-loader": "^5.0.0",
     "v-code-diff": "^1.0.0",
-    "vue-template-compiler": "^2.6.11",
+    "vue-template-compiler": "^2.6.14",
     "vue-worker": "^1.2.1"
   },
   "browserslist": [

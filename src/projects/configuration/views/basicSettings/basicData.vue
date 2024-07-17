@@ -41,7 +41,7 @@ const components = [
 const obj = {}
 
 components.forEach(key => {
-  obj[key] = require(`@/views/configuration/basicSettings/components/${key}.vue`).default
+  obj[key] = require(`../basicSettings/components/${key}.vue`).default
 })
 
 export default {

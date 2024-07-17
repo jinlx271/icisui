@@ -158,7 +158,7 @@ import {
 } from '@/api/configuration'
 import { unique, filterArrValue } from '@/utils/utils' // 存储方式
 import { debounce } from 'lodash'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import AbnormalLevel from './components/abnormalLevel.vue'
 export default {
   name: 'WarningConfig',

@@ -158,7 +158,7 @@
 </template>
 
 <script>
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import { mapGetters } from 'vuex'
 import {
   nutritionConvert_findWithPage,

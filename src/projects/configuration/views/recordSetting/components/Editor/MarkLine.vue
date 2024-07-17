@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import eventBus from '../../utils/eventBus'
+import eventBus from '@/utils/eventBus'
 // import { mapState } from 'vuex'
 import { sin, cos } from '../../utils/translate'
 

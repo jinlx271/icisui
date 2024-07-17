@@ -1,7 +1,7 @@
 <template>
   <div class="scrollbar-wrapper">
-    <el-header class="flex r_c_center" v-if="activeMenu.indexOf('configuration/') > -1">
-      <el-input placeholder="菜单名称" size="small" clearable suffix-icon="el-icon-search" v-model="filterText">
+    <el-header class="flex r_c_center" >
+      <el-input placeholder="菜单名称" size="small" clearable suffix-icon="el-icon-search" v-model="filterText"  v-if="activeMenu.indexOf('configuration') > -1">
       </el-input>
     </el-header>
     <el-scrollbar style="flex:1">
@@ -112,7 +112,9 @@ export default {
     },
     filterMenu() {
       const routes = JSON.parse(JSON.stringify(this.routes))
-      if (!this.filterText) return routes
+      if (!this.filterText) {
+        return routes
+      }
       const tempRoutes = routes.map(item => {
         if (item.meta.title.indexOf(this.filterText) > -1) {
           return item
@@ -231,10 +233,10 @@ export default {
       if (this.isShortcut) {
         this.rootPath = this.shortcutRootPath
       } else {
-        this.rootPath = this.$route.matched[0].path
+        this.rootPath = this.$route.path
       }
       // 菜单里面找出来 1级菜单
-      this.targetRoutes = this.mainMenu.find(element => {
+      this.targetRoutes = this.mainMenu?.find(element => {
         return element.path === this.rootPath
       })
       this.routes = this.targetRoutes?.children

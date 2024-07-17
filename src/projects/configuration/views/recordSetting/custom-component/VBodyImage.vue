@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import BodyImage from '@/views/patient/components/pipelineCare/bodyImage'
+import BodyImage from '@/components/bodyImage/bodyImage'
 export default {
   components: {
     BodyImage

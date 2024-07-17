@@ -28,10 +28,10 @@ import Shape from './Shape'
 import { getStyle } from '@/utils/utils'
 import ContextMenu from './ContextMenu'
 import MarkLine from './MarkLine'
-import { components } from '@/views/configuration/recordSetting/components/Editor/component-static'
+import { components } from './component-static'
 const obj = {}
 components.forEach(key => {
-  obj[key] = require(`@/views/configuration/recordSetting/custom-component/${key}.vue`).default
+  obj[key] = require(`../../custom-component/${key}.vue`).default
 })
 export default {
   props: {

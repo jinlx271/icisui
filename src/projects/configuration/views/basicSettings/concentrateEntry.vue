@@ -100,7 +100,7 @@ import {
   jzlrModule_column_edit,
   jzlrModule_list
 } from '@/api/configuration'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 export default {
   name: 'ConcentrateEntryConfig',
   components: { icuRegion },

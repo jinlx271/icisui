@@ -41,7 +41,7 @@
 
 <script>
 
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import ztzjTable from './components/ztzjTable'
 import { mapGetters } from 'vuex'
 export default {

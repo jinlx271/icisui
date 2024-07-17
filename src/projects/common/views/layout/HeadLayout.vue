@@ -12,8 +12,8 @@
 <script>
 import { mapGetters } from 'vuex'
 import menuHead from './menuHead/index' // 公共头部
-import { AppMain } from './components'
-import limitFeatMixin from '@/views/layout/mixin/limitFeatMixin'
+import { AppMain } from '@/components'
+import limitFeatMixin from '@/mixins/limitFeatMixin'
 export default {
   name: 'HeadLayout',
   mixins: [limitFeatMixin],

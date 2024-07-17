@@ -335,7 +335,7 @@ export default {
           this.$store.commit('set_currentUserWard', wardListRes.data[0])
           this.$store.dispatch('caLogin', caRes)
           this.getUserSignInfo(token?.data?.accessToken, result?.data?.userId)
-          this.$router.push({ path: this.indexUrl, query: this.$route.query })
+          this.$router.push({ path: '/layout', query: { currentModel: this.indexUrl, ...this.$route.query } })
         } else {
           this.$message.warning('该用户无病区权限!')
         }
@@ -548,7 +548,7 @@ export default {
               }
               setTimeout(() => {
                 this.loading = false
-                this.$router.push({ path: me.indexUrl, query: this.$route.query }).catch(e => {
+                this.$router.push({ path: '/layout', query: { currentModel: this.indexUrl, ...this.$route.query } }).catch(e => {
                   console.error(e)
                 })
               }, 2000)
@@ -730,7 +730,7 @@ export default {
                   userName: rq.Data,
                   picPath: respone.Data
                 }).then(respone => {
-                  this.$router.push({ path: this.indexUrl, query: this.$route.query })
+                  this.$router.push({ path: '/layout', query: { currentModel: this.indexUrl, ...this.$route.query } })
                 })
               })
             })
@@ -840,7 +840,7 @@ export default {
                   userName: req.Data,
                   picPath: respone.Data
                 }).then(() => {
-                  this.$router.push({ path: this.indexUrl, query: this.$route.query })
+                  this.$router.push({ path: '/layout', query: { currentModel: this.indexUrl, ...this.$route.query } })
                 })
               })
             })
@@ -900,7 +900,7 @@ export default {
                     userName: bizNum,
                     picPath: respone.data
                   }).then(() => {
-                    this.$router.push({ path: this.indexUrl, query: this.$route.query })
+                    this.$router.push({ path: '/layout', query: { currentModel: this.indexUrl, ...this.$route.query } })
                   })
                 })
               })

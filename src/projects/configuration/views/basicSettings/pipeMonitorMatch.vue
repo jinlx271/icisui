@@ -140,7 +140,7 @@ import {
   catheterMoniitem_insert,
   catheterMoniitem_getMaxSort
 } from '@/api/configuration'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 import { mapGetters } from 'vuex'
 import { filterArrValue } from '@/utils/utils'
 export default {

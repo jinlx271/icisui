@@ -153,7 +153,7 @@ import './tinymce/plugins/image' // 图片
 import './tinymce/plugins/sup'
 import './tinymce/plugins/trademark'
 import './tinymce/plugins/sub'
-import mixinRecordSetting from '@/views/configuration/recordSetting/mixinRecordSetting'
+import mixinRecordSetting from '../mixinRecordSetting'
 import leaveConfirm from '@/mixins/leaveConfirm'
 import ParamList from '../paramConfigCom/paramList.vue'
 import {

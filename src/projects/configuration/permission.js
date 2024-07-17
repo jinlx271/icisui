@@ -1,5 +1,5 @@
 import router from './router'
-import store from './store'
+import store from '@/store'
 import { Message } from 'element-ui'
 import NProgress from 'nprogress' // Progress 进度条
 import 'nprogress/nprogress.css' // Progress 进度条样式
@@ -154,6 +154,7 @@ router.beforeEach(async (to, from, next) => {
       } else {
         store.dispatch('setMenuPathList', menuPathList).then((response) => {
           // 处理一下一级菜单指定二级菜单.没有子菜单的情况
+
           for (let i = 0; i < response.length; i++) {
             // 一级菜单 为了break跳出去用for
             const item = response[i]
@@ -222,7 +223,7 @@ router.beforeEach(async (to, from, next) => {
               }
             }
           }
-          response.push({ path: '*', redirect: '/404', hidden: true })
+          // response.push({ path: '*', redirect: '/404', hidden: true })
           router.addRoutes(response)
           // next()
         })

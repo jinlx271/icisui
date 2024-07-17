@@ -166,8 +166,8 @@ import {
   classDurationConfig_insert
 } from '@/api/configuration'
 import { debounce } from 'lodash'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
-import { filterArrValue } from '../../../utils/utils'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
+import { filterArrValue } from '@/utils/utils'
 export default {
   name: 'KPISet',
   components: {

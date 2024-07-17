@@ -13,48 +13,39 @@ export const indexRouter = [
   {
     path: '/',
     name: 'root',
-    component: () => import('@/views/login/index'),
+    component: () => import('../views/login/index'),
+    hidden: true
+  },
+  {
+    path: '/layout',
+    name: '',
+    component: () => import('../views/layout/Layout'),
     hidden: true
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/login/index'),
+    component: () => import('../views/login/index'),
     hidden: true
   },
   {
     path: '/login/:role',
     name: 'loginRole',
-    component: () => import('@/views/login/index'),
+    component: () => import('../views/login/index'),
     hidden: true
   },
   {
     path: '/404',
-    component: () => import('@/views/404'),
+    component: () => import('../views/404'),
     hidden: true
   },
   {
     path: '/error',
-    component: () => import('@/views/error'),
-    hidden: true
-  },
-  {
-    path: '/patient/nurseRecordPrint',
-    component: () => import('@/views/patient/nurseRecordPrint'),
-    hidden: true
-  },
-  {
-    path: '/patient/recordView', // 外部文书调阅
-    component: () => import('@/views/patient/recordView'),
-    hidden: true
-  },
-  {
-    path: '/monitoringCenter/shiftHandoverAllScreen',
-    component: () => import('@/views/monitoringCenter/shiftHandoverScreen'),
+    component: () => import('../views/error'),
     hidden: true
   }
 ]
-export const settingRoutes = wardOverview.concat(patient).concat(inpatienArea).concat(qualityControl).concat(operate).concat(monitoringCenter).concat(knowledgeBaseManager).concat(configuration)
+export const settingRoutes = []
 
 const createRouter = () =>
   new Router({

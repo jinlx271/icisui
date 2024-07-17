@@ -17,15 +17,15 @@ import '@/app/font_3390012_gapvtcyjdao/iconfont.css' // 引入外部小图标css
 import '@/styles/draggableMsg.css'
 import App from './App' // 小图片的包
 import router from './router' // 引入公共路由模块
-import store from './store' // 引入公共缓存模块
+import store from '@/store' // 引入公共缓存模块
 import dayjs from 'dayjs' // 时间的处理模块
 // import '@/assets/CA/multibrowser.js'
 // import '@/assets/CA/ca.js'
-import { getDictItemList, getParams, queryParam, batchGetDictItemList } from './utils/utils' // 时间的处理模块
+import { getDictItemList, getParams, queryParam, batchGetDictItemList } from '@/utils/utils' // 时间的处理模块
 import '@/icons' // icon svg的模块
 import './permission' // 也是公共处理js
-import * as filters from './filters' // 过滤的一些方法
-import directive from './directive'
+import * as filters from '@/filters' // 过滤的一些方法
+import directive from '@/directive'
 import components from '@/components'
 import Print from '@/assets/printarea.js'
 import Visibility from '@/assets/visibility.js'

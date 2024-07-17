@@ -145,7 +145,7 @@ import {
   catheter_findWithPage
 } from '@/api/configuration'
 import { debounce } from 'lodash'
-import icuRegion from '@/views/configuration/basicSettings/components/icuRegion.vue'
+import icuRegion from '../basicSettings/components/icuRegion.vue'
 export default {
   name: 'PipeInfectRisk',
   components: {
