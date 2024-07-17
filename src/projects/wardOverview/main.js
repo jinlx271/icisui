@@ -83,4 +83,11 @@ new Vue({
   store,
   render: (h) => h(App)
 })
-
+var EventBus = new Vue()
+Object.defineProperties(Vue.prototype, {
+  $bus: {
+    get: function () {
+      return EventBus
+    }
+  }
+})

@@ -216,6 +216,7 @@ export default {
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
         color: #000000;
+        text-align: left;
       }
       &_right {
         width: vw(74);

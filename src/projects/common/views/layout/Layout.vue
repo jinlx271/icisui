@@ -5,6 +5,7 @@
     </div>
     <div class="LMContiner" :key="timestamp" id="commonLayout">
       <iframe id="commonIframe" v-if="$route.query.currentModel.indexOf('/configuration')!= -1 " :src="'http://172.23.15.127:8081/#/configuration?token=tempToken&height='+this.height+'&width='+this.width+'&limitFeat=1&userID='+userInfo.userName" class="w100" style=" border:none;overflow:hidden" @load="setWindowSize"></iframe>
+      <iframe id="commonIframe" v-if="$route.query.currentModel.indexOf('/wardOverview')!= -1 " :src="'http://172.23.15.127:8082/#/wardOverview?token=tempToken&height='+this.height+'&width='+this.width+'&limitFeat=1&userID='+userInfo.userName" class="w100" style=" border:none;overflow:hidden" @load="setWindowSize"></iframe>
     </div>
   </div>
 </template>
@@ -30,9 +31,13 @@ export default {
     ...mapGetters(['userInfo'])
   },
   mounted() {
-    this.width = document.querySelector('#commonLayout').offsetWidth
-    this.height = document.querySelector('#commonLayout').offsetHeight
+    this.refreshBodySize()
+    window.addEventListener('resize', this.refreshBodySize)
   },
+   beforeDestroy() {
+    window.removeEventListener('resize', this.refreshBodySize)
+  },
+
   created() { },
   watch: {
     '$route.path': {
@@ -51,6 +56,11 @@ export default {
     }
   },
   methods: {
+    refreshBodySize() {
+      this.width = document.querySelector('#commonLayout').offsetWidth
+      this.height = document.querySelector('#commonLayout').offsetHeight
+      this.$bus.emit('iframeResize')
+    },
     refresh() {
       this.timestamp = new Date().getTime()
     },
@@ -62,10 +72,8 @@ export default {
       // body.body.style.height = this.height + 'px'
       // body.body.style.overFlow = 'hidden'
     }
-  },
-  beforeDestroy() {
-
   }
+
 }
 </script>
 

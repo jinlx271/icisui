@@ -3,29 +3,21 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '../views/layout'
 Vue.use(Router)
-// const originalPush = Router.prototype.push
-// Router.prototype.push = function push(location) {
-//   return originalPush.call(this, location).catch((err) => err)
-// }
-// const originalReplace = Router.prototype.replace
-// Router.prototype.replace = function replace(location) {
-//   return originalReplace.call(this, location).catch((err) => err)
-// }
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err)
+}
+const originalReplace = Router.prototype.replace
+Router.prototype.replace = function replace(location) {
+  return originalReplace.call(this, location).catch((err) => err)
+}
 const routerList = [
   {
-    path: '/',
-    name: 'root',
-    meta: {
-      title: '配置管理'
-    },
-    component: Layout
-  },
-  {
     path: '/configuration',
-    name: 'configuration',
     meta: {
       title: '配置管理'
     },
+    name: 'configuration',
     component: Layout
   }
 ]
@@ -37,9 +29,8 @@ const configuration = [
       title: '配置管理'
     },
     name: 'configuration',
-    hidden: true,
-    // redirect: { name: 'configuration_authorManagement' },
     component: Layout,
+    redirect: '/authorManagement',
     children: [
       {
         path: '/authorManagement',
@@ -748,27 +739,27 @@ const configuration = [
     ]
   }
 ]
-// configuration.forEach(item => {
-//   if (item.children.length > 0) {
-//     const info = { ...item }
-//     if (info.children) {
-//       delete info.children
-//     }
-//     routerList.push(info)
-//     item.children?.forEach(c1 => {
-//       const obj = { ...c1 }
-//       if (c1.children) {
-//         delete obj.children
-//       }
-//       routerList.push(obj)
-//       c1.children?.forEach(c2 => {
-//         routerList.push(c2)
-//       })
-//     })
-//   } else {
-//     routerList.push(item)
-//   }
-// })
+configuration.forEach(item => {
+  if (item.children.length > 0) {
+    const info = { ...item }
+    if (info.children) {
+      delete info.children
+    }
+    routerList.push(info)
+    item.children?.forEach(c1 => {
+      const obj = { ...c1 }
+      if (c1.children) {
+        delete obj.children
+      }
+      routerList.push(obj)
+      c1.children?.forEach(c2 => {
+        routerList.push(c2)
+      })
+    })
+  } else {
+    routerList.push(item)
+  }
+})
 console.log('routerList', routerList)
 const createRouter = () =>
   new Router({

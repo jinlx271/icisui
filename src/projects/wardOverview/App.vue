@@ -1,37 +1,16 @@
 <template>
-  <div class="HCContiner">
-    <div class="LMContiner" :key="timestamp">
-      <div class="Left LeftCss" >
-        <sidebar></sidebar>
-      </div>
-      <div class="Main">
-        <router-view></router-view>
-      </div>
-    </div>
+  <div id="app">
+    <router-view />
   </div>
 </template>
-
 <script>
-import { mapGetters } from 'vuex'
-import Sidebar from '@/components/Sidebar'
-
-import limitFeatMixin from '@/mixins/limitFeatMixin'
 export default {
-  name: 'Layout',
-  mixins: [limitFeatMixin],
-  components: {
-    Sidebar
-  },
+  name: 'App',
   data() {
-    return {
-      timestamp: 0,
-      parentWidth: 1366,
-      parentHeight: 886
-    }
+    return {}
   },
-  computed: {
-    ...mapGetters(['userInfo'])
-  },
+  computed: {},
+  beforeRouteLeave() {},
   beforeDestroy() {
     this.$bus.off('iframeResize', this.refreshBodySize)
   },
@@ -39,22 +18,7 @@ export default {
     this.refreshBodySize()
     this.$bus.on('iframeResize', this.refreshBodySize)
   },
-  created() { },
-  watch: {
-    '$route.path': {
-      handler: function (val) {
-        this.refreshBodySize()
-        if (val.indexOf('patient/') == -1) {
-          // this.$store.commit('set_patientInfo', {})
-        }
-      },
-      immediate: true
-    }
-  },
   methods: {
-    refresh() {
-      this.timestamp = new Date().getTime()
-    },
     refreshBodySize() {
       this.parentWidth = this.$route.query.width
       this.parentHeight = this.$route.query.height
@@ -77,44 +41,18 @@ export default {
         document.body.style.setProperty('--bodyOverflowY', 'hidden')
       }
     }
-
-  },
-  beforeDestroy() {
-
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.HCContiner {
-  padding: 0px;
-  margin: 0px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .Header {
-    height: 50px;
-    flex-shrink: 0;
-  }
-  .LMContiner {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-    background: #ebeff7;
-    .Left {
-      width: 120px;
-      background: #fff;
-      margin: 12px 0px 12px 0px;
-      flex-shrink: 0;
-    }
-    .LeftCss{
-      width: 210px !important;
-    }
-    .Main {
-      flex: 1;
-      overflow: hidden;
-      margin: 12px 12px 12px;
-    }
-  }
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f5;
 }
 </style>
