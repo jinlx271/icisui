@@ -154,7 +154,7 @@ export default {
         this.myChart = echarts.init(
           document.getElementById('chartCurrentShiftNurses')
         )
-        console.log(JSON.stringify(this.option))
+        // console.log(JSON.stringify(this.option))
         // 画echarts图
         this.myChart.setOption(this.option)
       })

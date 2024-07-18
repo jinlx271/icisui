@@ -12,16 +12,26 @@ export default {
   computed: {},
   beforeRouteLeave() {},
   beforeDestroy() {
-    this.$bus.off('iframeResize', this.refreshBodySize)
+    window.removeEventListener('resize', this.refreshBodySize())
   },
   mounted() {
     this.refreshBodySize()
-    this.$bus.on('iframeResize', this.refreshBodySize)
+    // window.addEventListener('message', function(event) {
+    //   console.log('event.data', event.data, event)
+    //   // if (event.origin !== 'http://172.23.17.25:8080') return // 确保消息来源可信
+    //   // if (event.data.method.indexOf('iframeResize') > -1) {
+    //   //   // console.log('event.data', event.data)
+    //   //   // this.$message(event.data)
+    //   //   this.refreshBodySize(event.data.method.split(':')[1], event.data.method.split(':')[2])
+    //   // }
+    // }, false)
+
+    window.addEventListener('resize', this.refreshBodySize())
   },
   methods: {
-    refreshBodySize() {
-      this.parentWidth = this.$route.query.width
-      this.parentHeight = this.$route.query.height
+    refreshBodySize(width, height) {
+      this.parentWidth = width || this.$route.query.width
+      this.parentHeight = height || this.$route.query.height
       if (this.parentWidth) {
         document.body.style.setProperty('--bodyWidth', Number(this.parentWidth) < 1366 ? '1366px' : (this.parentWidth + 'px'))
         document.body.style.setProperty('--bodyWidthValue', Number(this.parentWidth) < 1366 ? 1366 : Number(this.parentWidth))

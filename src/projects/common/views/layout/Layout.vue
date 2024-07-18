@@ -4,8 +4,8 @@
       <menuHead @refresh="refresh"></menuHead>
     </div>
     <div class="LMContiner" :key="timestamp" id="commonLayout">
-      <iframe id="commonIframe" v-if="$route.query.currentModel.indexOf('/configuration')!= -1 " :src="'http://172.23.15.127:8081/#/configuration?token=tempToken&height='+this.height+'&width='+this.width+'&limitFeat=1&userID='+userInfo.userName" class="w100" style=" border:none;overflow:hidden" @load="setWindowSize"></iframe>
-      <iframe id="commonIframe" v-if="$route.query.currentModel.indexOf('/wardOverview')!= -1 " :src="'http://172.23.15.127:8082/#/wardOverview?token=tempToken&height='+this.height+'&width='+this.width+'&limitFeat=1&userID='+userInfo.userName" class="w100" style=" border:none;overflow:hidden" @load="setWindowSize"></iframe>
+      <iframe id="commonIframe" v-if="$route.query.currentModel.indexOf('/configuration')!= -1 " :src="'http://172.23.15.127:8081/#/configuration?wardCode='+currentUserWard.wardCode+'&token=tempToken&height='+this.height+'&width='+this.width+'&limitFeat=1&userID='+userInfo.userName" class="w100" style=" border:none;overflow:hidden" ></iframe>
+      <iframe id="commonIframe" v-if="$route.query.currentModel.indexOf('/wardOverview')!= -1 " :src="'http://172.23.15.127:8082/#/wardOverview?wardCode='+currentUserWard.wardCode+'&token=tempToken&height='+this.height+'&width='+this.width+'&limitFeat=1&userID='+userInfo.userName" class="w100" style=" border:none;overflow:hidden" ></iframe>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['userInfo'])
+    ...mapGetters(['userInfo', 'currentUserWard'])
   },
   mounted() {
     this.refreshBodySize()
@@ -50,28 +50,23 @@ export default {
     },
     '$route.query': {
       handler: function (val) {
-         this.timestamp = new Date().getTime()
+        // console.log('val', val)
+        this.timestamp = new Date().getTime()
       },
       immediate: true
     }
   },
   methods: {
     refreshBodySize() {
+      console.log('refreshBodySize')
       this.width = document.querySelector('#commonLayout').offsetWidth
       this.height = document.querySelector('#commonLayout').offsetHeight
-      this.$bus.emit('iframeResize')
+      // this.$bus.emit('iframeResize')
     },
     refresh() {
       this.timestamp = new Date().getTime()
-    },
-    setWindowSize() {
-      // var iframe = document.getElementById('commonIframe')
-      // var body = iframe.contentDocument || iframe.contentWindow.document
-      // body.body.style.width = '100%'
-      // console.log('this.height', this.height)
-      // body.body.style.height = this.height + 'px'
-      // body.body.style.overFlow = 'hidden'
     }
+
   }
 
 }

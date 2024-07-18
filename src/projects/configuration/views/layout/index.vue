@@ -8,13 +8,29 @@
         <router-view></router-view>
       </div>
     </div>
+    <!-- <div class="LMContiner" :key="timestamp">
+      <el-menu :default-active="activeIndex"  class="el-menu-vertical-demo leftMenu Left LeftCss" ref="menu">
+          <div v-for="(item, index) in mainMenu" :key="item.path">
+            <router-link :ref="`menuPathList${item.path}`" :to="{ path: item.path, query: { menuId: item.id } }"
+              >
+              <el-menu-item class="centerDiv_itemDiv " v-bind:index="index + ''">
+                <span class="menuTitle"><i :class="item.icon"></i></span>
+                <span class="menuTitle">{{ item.meta.title }}</span>
+              </el-menu-item>
+            </router-link>
+          </div>
+      </el-menu>
+
+      <div class="Main flex-1">
+          <router-view></router-view>
+      </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import Sidebar from '@/components/Sidebar'
-
+import Sidebar from '../../components/Sidebar'
 import limitFeatMixin from '@/mixins/limitFeatMixin'
 export default {
   name: 'Layout',
@@ -26,18 +42,21 @@ export default {
     return {
       timestamp: 0,
       parentWidth: 1366,
-      parentHeight: 886
+      parentHeight: 886,
+      activeIndex: 0,
+      mainMenu: []
     }
   },
   computed: {
     ...mapGetters(['userInfo'])
   },
   beforeDestroy() {
-    this.$bus.off('iframeResize', this.refreshBodySize)
+    // this.$bus?.off('iframeResize', this.refreshBodySize)
   },
   mounted() {
+    this.mainMenu = this.$router.options.settingRoutes
     this.refreshBodySize()
-    this.$bus.on('iframeResize', this.refreshBodySize)
+    // this.$bus?.on('iframeResize', this.refreshBodySize)
   },
   created() { },
   watch: {
@@ -77,9 +96,6 @@ export default {
         document.body.style.setProperty('--bodyOverflowY', 'hidden')
       }
     }
-
-  },
-  beforeDestroy() {
 
   }
 }

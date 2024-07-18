@@ -154,7 +154,6 @@ router.beforeEach(async (to, from, next) => {
       } else {
         store.dispatch('setMenuPathList', menuPathList).then((response) => {
           // 处理一下一级菜单指定二级菜单.没有子菜单的情况
-
           for (let i = 0; i < response.length; i++) {
             // 一级菜单 为了break跳出去用for
             const item = response[i]
