@@ -12,17 +12,15 @@ router.beforeEach(async (to, from, next) => {
   }
   const { code } = to.query
   console.log('code==', code)
-  const { token, inpatientID, wardCode, TOKEN, userID } = to.query // session_id=123&service_ticket=ST
-
-  if (token || TOKEN) {
-   const query = {
-      inpatientID: inpatientID, // 对应重症 patientInfo.inpatientEntity.hisInpatientId 患者详情必须
-      wardCode: wardCode,
-      token: token || TOKEN,
-      userID
+  if (code) { //
+    const query = {
+      code
     }
+    // my.popup.showLoading({
+    //   content: '加载中'
+    // })
     store
-      .dispatch('redirectLogin', query)
+      .dispatch('WinMYLogin', query)
       .then(async function (result) {
         const cuBeidRes = await getCurBeid() // 第三方登录 保存系统信息
         if (cuBeidRes.data) {
@@ -35,8 +33,7 @@ router.beforeEach(async (to, from, next) => {
             const currWardInfo = wardListRes.data.filter((item) => item.wardCode == result.wardCode)
             store.commit('set_currentUserWard', currWardInfo[0] || wardListRes.data[0])
             handleCurrentSkin('', result?.user?.userName, currWardInfo[0]?.wardCode || wardListRes.data[0]?.wardCode)
-             delete to.query.token
-            delete to.query.TOKEN
+            delete to.query.code
             // my.popup.hideLoading()
             next({ path: to.path, query: to.query })
           }
@@ -123,7 +120,7 @@ router.beforeEach(async (to, from, next) => {
               }
               if (!item.existence && item.name !== 'patient') {
                 // 患者找不到下面子元素的  患者一般不会禁用床卡.这里就不做判断了
-                if (item?.children && item?.children[0]?.name && item.redirect) {
+                if (item?.children && item?.children[0]?.name) {
                   item.redirect.name = item.children[0].name
                 } else {
                   if (item.path.indexOf('/patient/') == -1) {

@@ -1,8 +1,7 @@
-
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '../views/layout/index'
-// import Layout from '../views/layout/Layout'
+import Layout from '../views/layout'
+// import PatientLayout from '../views/patient/patientLayout'
 Vue.use(Router)
 const originalPush = Router.prototype.push
 Router.prototype.push = function push(location) {
@@ -12,19 +11,15 @@ const originalReplace = Router.prototype.replace
 Router.prototype.replace = function replace(location) {
   return originalReplace.call(this, location).catch((err) => err)
 }
-const routerList = [
+const routes = [
   {
-    path: '/configuration',
-    meta: {
-      title: '配置管理'
-    },
-    name: 'configuration',
-    component: Layout
-    // redirect: { name: 'configuration_authorManagement' }
+    path: '/configuration', // 外部文书调阅
+    component: Layout,
+
+    hidden: true
   }
 ]
-
-const configuration = [
+const settingRoutes = [
   {
     path: '/configuration/authorManagement',
     name: 'configuration_authorManagement',
@@ -741,43 +736,18 @@ const configuration = [
   }
 
 ]
-configuration.forEach(item => {
-  if (item.children.length > 0) {
-    const info = { ...item }
-    if (info.children) {
-      delete info.children
-    }
-    routerList.push(info)
-    item.children?.forEach(c1 => {
-      const obj = { ...c1 }
-      if (c1.children) {
-        delete obj.children
-      }
-      routerList.push(obj)
-      c1.children?.forEach(c2 => {
-        routerList.push(c2)
-      })
-    })
-  } else {
-    routerList.push(item)
-  }
-})
-console.log('routerList', routerList)
+
 const createRouter = () =>
   new Router({
     // mode: 'history', // require service support
     scrollBehavior: () => ({ y: 0 }),
-    settingRoutes: configuration,
-    routes: routerList
+    settingRoutes: settingRoutes,
+    routes: routes
   })
 
 const router = createRouter()
-
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router
 }
-
 export default router
-

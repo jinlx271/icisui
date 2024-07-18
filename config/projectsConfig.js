@@ -6,6 +6,37 @@ const branchArr = argv[argv.length - 1].split('=')
 const build_on_branch = (process.env.build_on_branch || '') + (process.env.current_version || '') + (process.env.datetimes || '')
 const versionMessage = (branchArr[0] == 'branch' ? branchArr[1] : '') + '#' + (build_on_branch || branch) + `日期:${date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()}`
 const config = {
+  h5: {
+    pages: {
+      index: {
+        entry: "src/projects/h5/main.js",
+        template: "public/index.html",
+        filename: "index.html",
+        title: '重症管理系统',
+        versionMessage: versionMessage,
+        chunks: ['chunk-vendors', 'chunk-common', 'index']
+      }
+    },
+    devServer: {
+      port: 8081,
+      hot: true,
+      compress: true,
+      open: true,
+      overlay: { warnings: false, errors: true },
+      publicPath: '/',
+      proxy: {
+        // 跨域
+        '': {
+          target: 'http://172.23.2.104:8200/',
+          changeOrigin: true,
+          pathRewrite: {
+            '^': ''
+          }
+        }
+      }
+    },
+    
+  },
   configuration: {
     pages: {
       index: {

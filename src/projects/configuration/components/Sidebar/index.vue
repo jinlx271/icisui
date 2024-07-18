@@ -1,7 +1,7 @@
 <template>
   <div class="scrollbar-wrapper">
     <el-header class="flex r_c_center" >
-      <el-input placeholder="菜单名称" size="small" clearable suffix-icon="el-icon-search" v-model="filterText"  v-if="activeMenu.indexOf('configuration') > -1">
+      <el-input placeholder="菜单名称" size="small" clearable suffix-icon="el-icon-search" v-model="filterText"  >
       </el-input>
     </el-header>
     <el-scrollbar style="flex:1">
@@ -57,11 +57,23 @@ export default {
       targetRoutes: '', // 菜单里面找出来 1级菜单
       XTCS0021List: [], // 系统参数控制是否显示提醒
       filterText: '',
-      openeds: [],
-      mainMenu: []
+      openeds: []
+      // mainMenu: []
     }
   },
   created() {
+    const routerPath = location.hash.split('#')[1]
+    this.mainMenu.forEach((item, index) => {
+      if (item.path == routerPath) {
+        this.activeIndex = index + ''
+      } else if (item.children?.length > 0) {
+        item.children.forEach((c, cIndex) => {
+          if (c.path == routerPath) {
+            this.activeIndex = index + ''
+          }
+        })
+      }
+    })
     this.init()
     // 截流
     this.debounceFC = _.debounce(() => {
@@ -70,8 +82,19 @@ export default {
   },
   mounted() {
     // 有权限的路由才显示
-    const menuPathList = JSON.parse(sessionStorage.getItem('menuPathList'))
-    this.mainMenu = this.filterRootRouter(menuPathList)
+    // console.log('this.activeIndex', this.$store, this.mainMenu)
+    // const routerPath = location.hash.split('#')[1]
+    // this.mainMenu.forEach((item, index) => {
+    //   if (item.path == routerPath) {
+    //     this.activeIndex = index + ''
+    //   } else if (item.children?.length > 0) {
+    //     item.children.forEach((c, cIndex) => {
+    //       if (c.path == routerPath) {
+    //         this.activeIndex = index + ''
+    //       }
+    //     })
+    //   }
+    // })
   },
   watch: {
     activeMenu(val) {
@@ -103,7 +126,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['sidebar', 'patientInfo', 'patientRoute']),
+    ...mapGetters(['sidebar', 'patientInfo', 'patientRoute', 'mainMenu']),
     activeMenu() {
       const route = this.$route
       const { meta, path } = route
@@ -121,7 +144,7 @@ export default {
         return routes
       }
       const tempRoutes = routes.map(item => {
-        if (item.meta.title.indexOf(this.filterText) > -1) {
+        if (item.meta?.title.indexOf(this.filterText) > -1) {
           return item
         } else {
           item.children = item.children.filter(c => c.meta.title.indexOf(this.filterText) > -1)
@@ -130,7 +153,7 @@ export default {
         return item
       })
       return tempRoutes.filter(item => {
-        if (item.meta.title.indexOf(this.filterText) > -1) return true
+        if (item.meta?.title.indexOf(this.filterText) > -1) return true
         else if (item.children.length > 0) {
           return true
         } else return false

@@ -1,50 +1,63 @@
 <template>
   <div class="HCContiner">
-    <div class="LMContiner">
-      <div class="el-menu-vertical-demo leftMenu">
-        <sidebar></sidebar>
+    <template v-if="$isWinMY">
+      <div>
+        <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft" >
+          <div class="w100 flex flex-justify-content" slot="title">
+            <div @click="showPicker">{{ currentUserWard.wardName }}</div>
+          </div>
+        </van-nav-bar>
       </div>
-     <!-- <el-menu :default-active="activeIndex" @select="handleSelect" class="el-menu-vertical-demo leftMenu" ref="menu">
-        <div v-for="(item, index) in mainMenu" :key="item.path">
-          <router-link :ref="`menuPathList${item.path}`" :to="{ path: item.path, query: { menuId: item.id } }"
-            v-if="showItem(item)">
-            <el-menu-item class="centerDiv_itemDiv " v-bind:index="index + ''">
-              <span class="menuTitle">{{ item.meta.title }}</span>
-              <template v-if="hasOneShowingChild(item.children, item) && (!onlyOneChild.children || onlyOneChild.noShowingChildren) && !item.alwaysShow">
-                <router-link :ref="`subMenuPathList${child.path}`" :to="{ path: child.path, query: { menuId: item.id } }" v-for="(child,cindex) in item.children" :key="cindex">
-                  <el-submenu>{{child.meta.title}}</el-submenu>
-                </router-link>
-              </template>
-              <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
-                <template slot="title">
-                  <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title"  style="text-align:left"/>
-                </template>
-                <sidebar-item v-for="child in item.children" :key="child.path" :is-nest="true" :item="child"
-                  :base-path="resolvePath(child.path)" class="nest-menu" />
-              </el-submenu>
-            </el-menu-item>
-          </router-link>
-        </div>
-      </el-menu> -->
-      <!-- 下拉刷新页面 -->
-      <div class="Main flex-1">
+      <div class="LMContiner">
+        <div class="Main flex-1">
           <router-view></router-view>
+        </div>
       </div>
-    </div>
+    </template>
+    <template v-else>
+        <div class="Header flex align-items-center">
+          <div class="title">
+            <img src="@/assets/img/logo.png" style="width:24px;height:24px" alt class="m-r10" />
+            <span class="system">{{ globalConfig.title }}</span><span v-if="systemInfoName">-{{ systemInfoName }}</span>
+          </div>
+          <div class="logout">
+            <div class="currWard" @click="showPicker">{{ currentUserWard.wardName }}</div>
+            <el-button @click="logout" icon="el-icon-switch-button" type="text"> </el-button>
+          </div>
+        </div>
+        <div class="LMContiner">
+          <el-menu :default-active="activeIndex" @select="handleSelect" class="el-menu-vertical-demo leftMenu" ref="menu">
+            <div v-for="(item, index) in mainMenu" :key="item.path">
+              <router-link :ref="`menuPathList${item.path}`" :to="{ path: item.path, query: { menuId: item.id } }"
+                v-if="showItem(item)">
+                <el-menu-item class="centerDiv_itemDiv " v-bind:index="index + ''">
+                  <span class="menuTitle"><i :class="item.icon"></i></span>
+                  <span class="menuTitle">{{ item.meta.title }}</span>
+                </el-menu-item>
+              </router-link>
+            </div>
+          </el-menu>
+          <!-- 下拉刷新页面 -->
+          <div class="Main flex-1">
+              <router-view></router-view>
+          </div>
+        </div>
+    </template>
+
+    <van-popup v-model="pickerFlag" position="bottom">
+      <van-picker :columns="userWardList" @change="onChange" :visible-item-count="3" show-toolbar
+        @cancel="pickerFlag = false" @confirm="onConfirm" class="fixedPicker" :default-index="pickerIndex"
+        value-key="wardName" />
+    </van-popup>
   </div>
 </template>
 
 <script>
-import path from 'path'
-import Sidebar from '../../components/Sidebar'
-import { isExternal } from '@/utils/validate'
 import { mapGetters } from 'vuex'
 import { handleCurrentSkin } from '@/utils/utils'
 export default {
   name: 'Layout',
-  components: {
-    Sidebar
-  },
+
   data() {
     return {
       globalConfig: globalConfig,
@@ -56,8 +69,7 @@ export default {
       wardCode: 1,
       vanPull: '',
       systemInfoName: '',
-      currentWardCode: '',
-      onlyOneChild: {}
+      currentWardCode: ''
       // mainMenu: []
     }
   },
@@ -78,7 +90,6 @@ export default {
         })
       }
     })
-
     if (this.currentUserWard) {
       this.currentWardCode = this.currentUserWard.wardCode
       handleCurrentSkin('', this.userInfo?.userName, this.currentWardCode)
@@ -108,30 +119,6 @@ export default {
     })
   },
   methods: {
-    hasOneShowingChild(children = [], parent) {
-      const showingChildren = children.filter(item => {
-        if (item.hidden) {
-          return false
-        } else {
-          // Temp set(will be used if only has one showing child)
-          this.onlyOneChild = item
-          return true
-        }
-      })
-
-      // When there is only one child router, the child router is displayed by default
-      if (showingChildren.length === 1) {
-        return true
-      }
-
-      // Show parent if there are no child router to display
-      if (showingChildren.length === 0) {
-        this.onlyOneChild = { ...parent, path: '', noShowingChildren: true }
-        return true
-      }
-
-      return false
-    },
     /**
      * 路由的显示
      * @param {u} item
@@ -217,21 +204,6 @@ export default {
     },
     onClickLeft() {
       this.$my.route.navigateBack()
-    },
-    resolvePath(routePath) {
-      if (isExternal(routePath)) {
-        return routePath
-      }
-      if (isExternal(this.basePath)) {
-        return this.basePath
-      }
-      return path.resolve(this.basePath, routePath)
-    },
-    redirectToPath(routePath) {
-      if (this.patientInfoItem?.patientInfo != null) {
-        this.$store.commit('set_patientInfo', this.patientInfoItem)
-        this.$router.push({ path: routePath, query: this.$route.query }) // /patient/11 找不到的路由。找不到路由，跳转第一个
-      }
     }
   },
   beforeDestroy() {
@@ -333,8 +305,7 @@ export default {
     background: #ebeff7;
 
     .leftMenu {
-      background: #fff;
-      width: rem(210);
+      width: rem(100);
       min-width: 65px;
 
       div {
@@ -361,7 +332,7 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: rem(10) rem(20);
+      padding: rem(60) rem(20);
     }
 
     .Main {
